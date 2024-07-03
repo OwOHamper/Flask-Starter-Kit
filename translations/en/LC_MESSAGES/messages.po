@@ -1,0 +1,138 @@
+# English translations for PROJECT.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2024-07-03 17:35+0200\n"
+"PO-Revision-Date: 2024-07-03 15:11+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: templates/pages/about.html:4
+msgid "about_title"
+msgstr "Flask Starter Kit - About"
+
+#: templates/pages/about.html:6
+msgid "about_description"
+msgstr ""
+"Quickly launch your web applications with the Full-Stack Flask Starter "
+"Kit."
+
+#: templates/pages/contact.html:4 templates/pages/contact.html:6
+msgid "contact_title"
+msgstr "Flask Starter Kit - Contact"
+
+#: templates/pages/documentation.html:4 templates/pages/documentation.html:6
+msgid "documentation_title"
+msgstr "Documentation"
+
+#: templates/pages/home.html:4
+msgid "home_title"
+msgstr "Flask Starter Kit"
+
+#: templates/pages/home.html:6
+msgid "home_description"
+msgstr ""
+"Quickly launch your web applications with the Full-Stack Flask Starter "
+"Kit."
+
+#: templates/pages/home.html:21
+msgid "home_hero_heading"
+msgstr "Full-Stack Flask Starter Kit"
+
+#: templates/pages/home.html:22
+msgid "home_hero_description"
+msgstr ""
+"Quickly launch your web applications with the Full-Stack Flask Starter "
+"Kit. Streamlined setup for seamless development and deployment."
+
+#: templates/pages/home.html:26
+msgid "see_features"
+msgstr "See Features"
+
+#: templates/pages/home.html:40
+msgid "view_on_github"
+msgstr "View on GitHub"
+
+#: templates/pages/home.html:51
+msgid "key_features"
+msgstr "🌟 Key Features"
+
+#: templates/pages/home.html:52
+msgid "feature_section_subtitle"
+msgstr "Empowering your web development with a thoughtfully crafted toolkit."
+
+#: templates/pages/home.html:62
+msgid "feature_1_title"
+msgstr "Easy Deployment"
+
+#: templates/pages/home.html:63
+msgid "feature_1_description"
+msgstr ""
+"Pre-configured Docker setup for straightforward deployment, getting your "
+"application up and running quickly."
+
+#: templates/pages/home.html:73
+msgid "feature_2_title"
+msgstr "Modern Design"
+
+#: templates/pages/home.html:74
+msgid "feature_2_description"
+msgstr ""
+"Leveraging Tailwind CSS and Flowbite UI library for a sleek, responsive "
+"interface that's easy to customize."
+
+#: templates/pages/home.html:83
+msgid "feature_3_title"
+msgstr "Security & Optimization"
+
+#: templates/pages/home.html:84
+msgid "feature_3_description"
+msgstr ""
+"Built-in security measures and performance optimizations to keep your "
+"application safe and fast."
+
+#: templates/pages/home.html:92
+msgid "feature_4_title"
+msgstr "Internalization"
+
+#: templates/pages/home.html:93
+msgid "feature_4_description"
+msgstr ""
+"Babel integration for seamless multi-language support, making your app "
+"accessible to a global audience."
+
+#: templates/pages/home.html:102
+msgid "feature_5_title"
+msgstr "Convenience"
+
+#: templates/pages/home.html:103
+msgid "feature_5_description"
+msgstr ""
+"While not claiming perfection, this tech stack is crafted to enhance "
+"developer productivity and satisfaction."
+
+#: templates/pages/home.html:109
+msgid "feature_6_title"
+msgstr "Comprehensive Toolset"
+
+#: templates/pages/home.html:110
+msgid "feature_6_description"
+msgstr ""
+"From theme switching to rate limiting, SEO support to analytics "
+"integration - a robust set of features to jumpstart your project."
+
+#: templates/pages/home.html:122
+msgid "FAQ"
+msgstr "Frequently asked questions"
+

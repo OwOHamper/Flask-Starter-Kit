@@ -1,0 +1,13 @@
+{% extends "layouts/landing-base.html" %}
+{% set active_page = "about" %}
+
+{% block title %} {{ _('about_title') }} {% endblock %}
+
+{% block description %}  {{ _('about_description') }} {% endblock %}
+
+
+{% block content %}
+
+{% include 'components/under_construction.html' %}
+
+{% endblock %}
