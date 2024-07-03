@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-07-03 21:23+0200\n"
+"POT-Creation-Date: 2024-07-03 21:29+0200\n"
 "PO-Revision-Date: 2024-07-03 15:11+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -17,6 +17,26 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.15.0\n"
+
+#: templates/layouts/landing-base.html:83
+msgid "open_main_menu"
+msgstr "Hauptmenü öffnen"
+
+#: templates/layouts/landing-base.html:92
+msgid "home"
+msgstr "Startseite"
+
+#: templates/layouts/landing-base.html:95
+msgid "about"
+msgstr "Über uns"
+
+#: templates/layouts/landing-base.html:98
+msgid "documentation"
+msgstr "Dokumentation"
+
+#: templates/layouts/landing-base.html:101
+msgid "contact"
+msgstr "Kontakt"
 
 #: templates/pages/about.html:4
 msgid "about_title"
@@ -144,7 +164,10 @@ msgstr "Was ist das Full-Stack Flask Starter Kit?"
 
 #: templates/pages/home.html:130
 msgid "answer_1"
-msgstr "Ein umfassender Ausgangspunkt für Flask-basierte Webanwendungen mit modernen Design-Tools, Bereitstellungskonfigurationen und entwicklerfreundlichen Funktionen."
+msgstr ""
+"Ein umfassender Ausgangspunkt für Flask-basierte Webanwendungen mit "
+"modernen Design-Tools, Bereitstellungskonfigurationen und "
+"entwicklerfreundlichen Funktionen."
 
 #: templates/pages/home.html:135
 msgid "question_2"
@@ -152,7 +175,9 @@ msgstr "Für wen ist dieses Starter Kit gedacht?"
 
 #: templates/pages/home.html:137
 msgid "answer_2"
-msgstr "Für Entwickler, die eine robuste Flask-Grundlage mit integrierten modernen Frontend-Tools und Bereitstellungslösungen suchen."
+msgstr ""
+"Für Entwickler, die eine robuste Flask-Grundlage mit integrierten "
+"modernen Frontend-Tools und Bereitstellungslösungen suchen."
 
 #: templates/pages/home.html:142
 msgid "question_3"
@@ -168,7 +193,9 @@ msgstr "Ist dieses Kit für Anfänger geeignet?"
 
 #: templates/pages/home.html:151
 msgid "answer_4"
-msgstr "Während etwas Flask-Erfahrung von Vorteil ist, zielt unsere Dokumentation darauf ab, Entwickler verschiedener Fähigkeitsstufen anzuleiten."
+msgstr ""
+"Während etwas Flask-Erfahrung von Vorteil ist, zielt unsere Dokumentation"
+" darauf ab, Entwickler verschiedener Fähigkeitsstufen anzuleiten."
 
 #: templates/pages/home.html:158
 msgid "question_5"
@@ -176,7 +203,9 @@ msgstr "Wie funktioniert das Docker-Setup?"
 
 #: templates/pages/home.html:160
 msgid "answer_5"
-msgstr "Unser Kit enthält ein vorkonfiguriertes Docker-Setup für einfache Entwicklung und Bereitstellung in verschiedenen Umgebungen."
+msgstr ""
+"Unser Kit enthält ein vorkonfiguriertes Docker-Setup für einfache "
+"Entwicklung und Bereitstellung in verschiedenen Umgebungen."
 
 #: templates/pages/home.html:165
 msgid "question_6"
@@ -184,7 +213,10 @@ msgstr "Kann ich dies für kommerzielle Projekte verwenden?"
 
 #: templates/pages/home.html:167
 msgid "answer_6"
-msgstr "Ja, dieses Starter Kit ist Open Source und kann sowohl für persönliche als auch für kommerzielle Projekte verwendet werden. Bitte überprüfen Sie die Lizenz für Details."
+msgstr ""
+"Ja, dieses Starter Kit ist Open Source und kann sowohl für persönliche "
+"als auch für kommerzielle Projekte verwendet werden. Bitte überprüfen Sie"
+" die Lizenz für Details."
 
 #: templates/pages/home.html:172
 msgid "question_7"
@@ -192,7 +224,9 @@ msgstr "Wie kann ich zu diesem Projekt beitragen?"
 
 #: templates/pages/home.html:174
 msgid "answer_7"
-msgstr "Wir freuen uns über Beiträge! Überprüfen Sie unser GitHub-Repository für Richtlinien zur Mitarbeit und offene Probleme."
+msgstr ""
+"Wir freuen uns über Beiträge! Überprüfen Sie unser GitHub-Repository für "
+"Richtlinien zur Mitarbeit und offene Probleme."
 
 #: templates/pages/home.html:179
 msgid "question_8"
@@ -200,4 +234,7 @@ msgstr "Gibt es eine Community oder ein Forum für Unterstützung?"
 
 #: templates/pages/home.html:181
 msgid "answer_8"
-msgstr "Obwohl wir kein spezielles Forum haben, können Sie GitHub Issues für Fragen und Diskussionen nutzen."
+msgstr ""
+"Obwohl wir kein spezielles Forum haben, können Sie GitHub Issues für "
+"Fragen und Diskussionen nutzen."
+

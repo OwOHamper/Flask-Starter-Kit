@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-07-03 21:23+0200\n"
+"POT-Creation-Date: 2024-07-03 21:29+0200\n"
 "PO-Revision-Date: 2024-07-03 15:11+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_Hant\n"
@@ -17,6 +17,26 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.15.0\n"
+
+#: templates/layouts/landing-base.html:83
+msgid "open_main_menu"
+msgstr "打開主菜單"
+
+#: templates/layouts/landing-base.html:92
+msgid "home"
+msgstr "首頁"
+
+#: templates/layouts/landing-base.html:95
+msgid "about"
+msgstr "關於我們"
+
+#: templates/layouts/landing-base.html:98
+msgid "documentation"
+msgstr "文檔"
+
+#: templates/layouts/landing-base.html:101
+msgid "contact"
+msgstr "聯繫我們"
 
 #: templates/pages/about.html:4
 msgid "about_title"
