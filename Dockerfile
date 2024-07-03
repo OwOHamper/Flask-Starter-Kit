@@ -11,7 +11,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 RUN npm install
-RUN npm tailwindcss -i ./static/css/input.css -o ./static/dist/css/output.css --minify
+RUN npx tailwindcss -i ./static/css/input.css -o ./static/dist/css/output.css --minify
 
 RUN pybabel compile -d translations
 
