@@ -78,7 +78,8 @@ When deploying to production you should always use Docker or any similar deploym
 1. Make sure you have Docker and Docker Compose installed.
 
 2. Build and run the containers:
-   ```
+   ```bash
+   #KEEP in mind this won't build tailwind styles, you will need to build them beforehand
    docker-compose up --build -d
    ```
 
