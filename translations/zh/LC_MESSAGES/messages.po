@@ -1,4 +1,4 @@
-# Chinese translations for PROJECT.
+# Traditional Chinese translations for PROJECT.
 # Copyright (C) 2024 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-07-03 17:35+0200\n"
-"PO-Revision-Date: 2024-07-03 15:51+0200\n"
+"POT-Creation-Date: 2024-07-03 21:23+0200\n"
+"PO-Revision-Date: 2024-07-03 15:11+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: zh\n"
-"Language-Team: zh <LL@li.org>\n"
+"Language: zh_Hant\n"
+"Language-Team: zh_Hant <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -20,112 +20,165 @@ msgstr ""
 
 #: templates/pages/about.html:4
 msgid "about_title"
-msgstr ""
+msgstr "Flask 啟動套件 - 關於我們"
 
 #: templates/pages/about.html:6
-#, fuzzy
 msgid "about_description"
-msgstr "使用全端 Flask 入門套件快速啟動您的 Web 應用程式。簡化設定以實現無縫開發和部署。"
+msgstr "使用全棧 Flask 啟動套件快速啟動您的網絡應用程序。"
 
 #: templates/pages/contact.html:4 templates/pages/contact.html:6
 msgid "contact_title"
-msgstr ""
+msgstr "Flask 啟動套件 - 聯繫我們"
 
 #: templates/pages/documentation.html:4 templates/pages/documentation.html:6
 msgid "documentation_title"
-msgstr ""
+msgstr "文檔"
 
 #: templates/pages/home.html:4
 msgid "home_title"
-msgstr ""
+msgstr "Flask 啟動套件"
 
 #: templates/pages/home.html:6
-#, fuzzy
 msgid "home_description"
-msgstr "使用全端 Flask 入門套件快速啟動您的 Web 應用程式。簡化設定以實現無縫開發和部署。"
+msgstr "使用全棧 Flask 啟動套件快速啟動您的網絡應用程序。"
 
 #: templates/pages/home.html:21
 msgid "home_hero_heading"
-msgstr "Full-Stack Flask Starter Kit"
+msgstr "全棧 Flask 啟動套件"
 
 #: templates/pages/home.html:22
 msgid "home_hero_description"
-msgstr "使用全端 Flask 入門套件快速啟動您的 Web 應用程式。簡化設定以實現無縫開發和部署。"
+msgstr "使用全棧 Flask 啟動套件快速啟動您的網絡應用程序。簡化的設置，實現無縫開發和部署。"
 
 #: templates/pages/home.html:26
 msgid "see_features"
-msgstr ""
+msgstr "查看功能"
 
 #: templates/pages/home.html:40
 msgid "view_on_github"
-msgstr ""
+msgstr "在 GitHub 上查看"
 
 #: templates/pages/home.html:51
 msgid "key_features"
-msgstr ""
+msgstr "🌟 主要功能"
 
 #: templates/pages/home.html:52
 msgid "feature_section_subtitle"
-msgstr ""
+msgstr "以精心設計的工具包賦能您的網絡開發。"
 
 #: templates/pages/home.html:62
 msgid "feature_1_title"
-msgstr ""
+msgstr "輕鬆部署"
 
 #: templates/pages/home.html:63
-#, fuzzy
 msgid "feature_1_description"
-msgstr "使用全端 Flask 入門套件快速啟動您的 Web 應用程式。簡化設定以實現無縫開發和部署。"
+msgstr "預配置的 Docker 設置，便於直接部署，讓您的應用程序快速運行。"
 
 #: templates/pages/home.html:73
 msgid "feature_2_title"
-msgstr ""
+msgstr "現代設計"
 
 #: templates/pages/home.html:74
-#, fuzzy
 msgid "feature_2_description"
-msgstr "使用全端 Flask 入門套件快速啟動您的 Web 應用程式。簡化設定以實現無縫開發和部署。"
+msgstr "利用 Tailwind CSS 和 Flowbite UI 庫，打造時尚、響應式的界面，易於自定義。"
 
 #: templates/pages/home.html:83
 msgid "feature_3_title"
-msgstr ""
+msgstr "安全性與優化"
 
 #: templates/pages/home.html:84
-#, fuzzy
 msgid "feature_3_description"
-msgstr "使用全端 Flask 入門套件快速啟動您的 Web 應用程式。簡化設定以實現無縫開發和部署。"
+msgstr "內置安全措施和性能優化，確保您的應用程序安全且高速。"
 
 #: templates/pages/home.html:92
 msgid "feature_4_title"
-msgstr ""
+msgstr "國際化"
 
 #: templates/pages/home.html:93
-#, fuzzy
 msgid "feature_4_description"
-msgstr "使用全端 Flask 入門套件快速啟動您的 Web 應用程式。簡化設定以實現無縫開發和部署。"
+msgstr "Babel 集成，實現無縫多語言支持，使您的應用程序可供全球用戶使用。"
 
 #: templates/pages/home.html:102
 msgid "feature_5_title"
-msgstr ""
+msgstr "便利性"
 
 #: templates/pages/home.html:103
-#, fuzzy
 msgid "feature_5_description"
-msgstr "使用全端 Flask 入門套件快速啟動您的 Web 應用程式。簡化設定以實現無縫開發和部署。"
+msgstr "雖然我們不宣稱完美，但這個技術棧旨在提高開發人員的生產力和滿意度。"
 
 #: templates/pages/home.html:109
 msgid "feature_6_title"
-msgstr ""
+msgstr "全面的工具集"
 
 #: templates/pages/home.html:110
-#, fuzzy
 msgid "feature_6_description"
-msgstr "使用全端 Flask 入門套件快速啟動您的 Web 應用程式。簡化設定以實現無縫開發和部署。"
+msgstr "從主題切換到速率限制，從 SEO 支持到分析集成 - 一套強大的功能，幫助您快速啟動項目。"
 
 #: templates/pages/home.html:122
 msgid "FAQ"
-msgstr ""
+msgstr "常見問題"
 
-#~ msgid "description_title"
-#~ msgstr ""
+#: templates/pages/home.html:128
+msgid "question_1"
+msgstr "什麼是全棧 Flask 啟動套件？"
+
+#: templates/pages/home.html:130
+msgid "answer_1"
+msgstr "這是一個基於 Flask 的網絡應用程序的全面起點，具有現代設計工具、部署配置和對開發者友好的功能。"
+
+#: templates/pages/home.html:135
+msgid "question_2"
+msgstr "這個啟動套件適合誰？"
+
+#: templates/pages/home.html:137
+msgid "answer_2"
+msgstr "適合尋找具有集成現代前端工具和部署解決方案的強大 Flask 基礎的開發者。"
+
+#: templates/pages/home.html:142
+msgid "question_3"
+msgstr "這個套件使用哪些技術？"
+
+#: templates/pages/home.html:144
+msgid "answer_3"
+msgstr "Flask、Tailwind CSS、Flowbite、Docker、MongoDB、Babel 等。"
+
+#: templates/pages/home.html:149
+msgid "question_4"
+msgstr "這個套件適合初學者嗎？"
+
+#: templates/pages/home.html:151
+msgid "answer_4"
+msgstr "雖然有 Flask 經驗會有幫助，但我們的文檔旨在指導不同技能水平的開發者。"
+
+#: templates/pages/home.html:158
+msgid "question_5"
+msgstr "Docker 設置如何工作？"
+
+#: templates/pages/home.html:160
+msgid "answer_5"
+msgstr "我們的套件包含預先配置的 Docker 設置，可在不同環境中輕鬆開發和部署。"
+
+#: templates/pages/home.html:165
+msgid "question_6"
+msgstr "我可以將其用於商業項目嗎？"
+
+#: templates/pages/home.html:167
+msgid "answer_6"
+msgstr "是的，這個啟動套件是開源的，可用於個人和商業項目。請查看許可證以了解詳情。"
+
+#: templates/pages/home.html:172
+msgid "question_7"
+msgstr "我如何為這個項目做出貢獻？"
+
+#: templates/pages/home.html:174
+msgid "answer_7"
+msgstr "我們歡迎貢獻！請查看我們的 GitHub 存儲庫以了解貢獻指南和開放的問題。"
+
+#: templates/pages/home.html:179
+msgid "question_8"
+msgstr "有社區或論壇可以提供支持嗎？"
+
+#: templates/pages/home.html:181
+msgid "answer_8"
+msgstr "雖然我們沒有專門的論壇，但您可以使用 GitHub 議題進行提問和討論。"
 

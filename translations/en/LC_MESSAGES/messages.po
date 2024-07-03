@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-07-03 17:35+0200\n"
+"POT-Creation-Date: 2024-07-03 21:23+0200\n"
 "PO-Revision-Date: 2024-07-03 15:11+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -135,4 +135,69 @@ msgstr ""
 #: templates/pages/home.html:122
 msgid "FAQ"
 msgstr "Frequently asked questions"
+
+#: templates/pages/home.html:128
+msgid "question_1"
+msgstr "What is the Full-Stack Flask Starter Kit?"
+
+#: templates/pages/home.html:130
+msgid "answer_1"
+msgstr "A comprehensive starting point for Flask-based web applications, featuring modern design tools, deployment configurations, and developer-friendly features."
+
+#: templates/pages/home.html:135
+msgid "question_2"
+msgstr "Who is this starter kit for?"
+
+#: templates/pages/home.html:137
+msgid "answer_2"
+msgstr "Developers looking for a robust Flask foundation with integrated modern frontend tools and deployment solutions."
+
+#: templates/pages/home.html:142
+msgid "question_3"
+msgstr "What technologies does this kit use?"
+
+#: templates/pages/home.html:144
+msgid "answer_3"
+msgstr "Flask, Tailwind CSS, Flowbite, Docker, MongoDB, Babel, and more."
+
+#: templates/pages/home.html:149
+msgid "question_4"
+msgstr "Is this kit suitable for beginners?"
+
+#: templates/pages/home.html:151
+msgid "answer_4"
+msgstr "While some Flask experience is beneficial, our documentation aims to guide developers of various skill levels."
+
+#: templates/pages/home.html:158
+msgid "question_5"
+msgstr "How does the Docker setup work?"
+
+#: templates/pages/home.html:160
+msgid "answer_5"
+msgstr "Our kit includes a pre-configured Docker setup for easy development and deployment across different environments."
+
+#: templates/pages/home.html:165
+msgid "question_6"
+msgstr "Can I use this for commercial projects?"
+
+#: templates/pages/home.html:167
+msgid "answer_6"
+msgstr "Yes, this starter kit is open-source and can be used for both personal and commercial projects. Please check the license for details."
+
+#: templates/pages/home.html:172
+msgid "question_7"
+msgstr "How can I contribute to this project?"
+
+#: templates/pages/home.html:174
+msgid "answer_7"
+msgstr "We welcome contributions! Check our GitHub repository for contribution guidelines and open issues."
+
+#: templates/pages/home.html:179
+msgid "question_8"
+msgstr "question_8
+Is there a community or forum for support?"
+
+#: templates/pages/home.html:181
+msgid "answer_8"
+msgstr "While we don't have a dedicated forum, you can use GitHub issues for questions and discussions."
 
