@@ -112,10 +112,6 @@ To set up Babel for internationalization:
    pybabel update -i messages.pot -d translations
    ```
 
-
-## 🛠️ Configuration
-
-
 ## 🎨 Customization
 
 #### Color Customization
