@@ -64,7 +64,7 @@ msgstr "Alle Rechte vorbehalten."
 
 #: templates/pages/404.html:3
 msgid "404_not_found_title"
-msgstr "404 Nicht gefunden"
+msgstr "404 Seite nicht gefunden"
 
 #: templates/pages/about.html:4
 msgid "about_title"

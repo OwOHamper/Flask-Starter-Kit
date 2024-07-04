@@ -62,7 +62,7 @@ msgstr "版權所有。"
 
 #: templates/pages/404.html:3
 msgid "404_not_found_title"
-msgstr "404 頁面未找到"
+msgstr "404 網頁未找到"
 
 #: templates/pages/about.html:4
 msgid "about_title"
