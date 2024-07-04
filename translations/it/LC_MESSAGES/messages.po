@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-07-03 21:29+0200\n"
+"POT-Creation-Date: 2024-07-04 15:41+0200\n"
 "PO-Revision-Date: 2024-07-03 15:11+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: it\n"
@@ -18,6 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.15.0\n"
 
+#: templates/components/under_construction.html:4
+msgid "under_construction"
+msgstr "In costruzione"
+
+#: templates/components/under_construction.html:5
+msgid "under_construction_description"
+msgstr ""
+"Stiamo costruendo un Kit di Avvio Flask elegante ed efficiente per potenziare il vostro sviluppo web - presto disponibile!"
+
 #: templates/layouts/landing-base.html:83
 msgid "open_main_menu"
 msgstr "Apri menu principale"
@@ -27,6 +36,7 @@ msgid "home"
 msgstr "Home"
 
 #: templates/layouts/landing-base.html:95
+#: templates/layouts/landing-base.html:123
 msgid "about"
 msgstr "Chi siamo"
 
@@ -35,207 +45,264 @@ msgid "documentation"
 msgstr "Documentazione"
 
 #: templates/layouts/landing-base.html:101
+#: templates/layouts/landing-base.html:132
 msgid "contact"
 msgstr "Contatti"
 
+#: templates/layouts/landing-base.html:126
+msgid "privacy_policy"
+msgstr "Informativa sulla privacy"
+
+#: templates/layouts/landing-base.html:129
+msgid "terms_and_conditions"
+msgstr "Termini e condizioni"
+
+#: templates/layouts/landing-base.html:137
+msgid "all_rights_reserved."
+msgstr "Tutti i diritti riservati."
+
+#: templates/pages/404.html:3
+msgid "404_not_found_title"
+msgstr "404 Non trovato"
+
 #: templates/pages/about.html:4
 msgid "about_title"
-msgstr "Kit di Avvio Flask - Informazioni"
+msgstr "Chi siamo"
 
 #: templates/pages/about.html:6
 msgid "about_description"
 msgstr ""
-"Lancia rapidamente le tue applicazioni web con il Kit di Avvio Full-Stack"
-" Flask."
+"Scopri il Full-Stack Flask Starter Kit, le sue caratteristiche e il team "
+"dietro questo potente strumento di sviluppo web progettato per "
+"ottimizzare i tuoi progetti Flask."
 
-#: templates/pages/contact.html:4 templates/pages/contact.html:6
+#: templates/pages/contact.html:4
 msgid "contact_title"
-msgstr "Kit di Avvio Flask - Contatti"
+msgstr "Contatti"
 
-#: templates/pages/documentation.html:4 templates/pages/documentation.html:6
+#: templates/pages/contact.html:6
+msgid "contact_description"
+msgstr ""
+"Mettiti in contatto con il team di Flask Starter Kit. Siamo qui per "
+"aiutarti con le tue domande, feedback o esigenze di supporto."
+
+#: templates/pages/documentation.html:4
 msgid "documentation_title"
 msgstr "Documentazione"
 
+#: templates/pages/documentation.html:6
+msgid "documentation_description"
+msgstr ""
+"Guide complete per il Full-Stack Flask Starter Kit. Dalla configurazione "
+"alle funzionalità avanzate, trova tutte le informazioni necessarie per "
+"massimizzare il tuo sviluppo Flask."
+
 #: templates/pages/home.html:4
 msgid "home_title"
-msgstr "Kit di Avvio Flask"
+msgstr "Flask Starter Kit"
 
 #: templates/pages/home.html:6
 msgid "home_description"
 msgstr ""
-"Lancia rapidamente le tue applicazioni web con il Kit di Avvio Full-Stack"
-" Flask."
+"Lancia rapidamente le tue applicazioni web con il Full-Stack Flask "
+"Starter Kit."
 
-#: templates/pages/home.html:21
+#: templates/pages/home.html:24
 msgid "home_hero_heading"
-msgstr "Kit di Avvio Full-Stack Flask"
+msgstr "Full-Stack Flask Starter Kit"
 
-#: templates/pages/home.html:22
+#: templates/pages/home.html:25
 msgid "home_hero_description"
 msgstr ""
-"Lancia rapidamente le tue applicazioni web con il Kit di Avvio Full-Stack"
-" Flask. Configurazione semplificata per uno sviluppo e una distribuzione "
-"senza intoppi."
+"Lancia rapidamente le tue applicazioni web con il Full-Stack Flask "
+"Starter Kit. Configurazione ottimizzata per uno sviluppo e una "
+"distribuzione senza intoppi."
 
-#: templates/pages/home.html:26
+#: templates/pages/home.html:29
 msgid "see_features"
-msgstr "Vedi le Caratteristiche"
+msgstr "Vedi le caratteristiche"
 
-#: templates/pages/home.html:40
+#: templates/pages/home.html:43
 msgid "view_on_github"
 msgstr "Visualizza su GitHub"
 
-#: templates/pages/home.html:51
+#: templates/pages/home.html:54
 msgid "key_features"
-msgstr "🌟 Caratteristiche Principali"
+msgstr "🌟 Caratteristiche principali"
 
-#: templates/pages/home.html:52
+#: templates/pages/home.html:55
 msgid "feature_section_subtitle"
 msgstr "Potenzia il tuo sviluppo web con un toolkit accuratamente progettato."
 
-#: templates/pages/home.html:62
+#: templates/pages/home.html:65
 msgid "feature_1_title"
-msgstr "Distribuzione Facile"
+msgstr "Distribuzione facile"
 
-#: templates/pages/home.html:63
+#: templates/pages/home.html:66
 msgid "feature_1_description"
 msgstr ""
 "Configurazione Docker preimpostata per una distribuzione semplice, che "
-"rende la tua applicazione operativa rapidamente."
+"permette di avviare rapidamente la tua applicazione."
 
-#: templates/pages/home.html:73
+#: templates/pages/home.html:76
 msgid "feature_2_title"
-msgstr "Design Moderno"
+msgstr "Design moderno"
 
-#: templates/pages/home.html:74
+#: templates/pages/home.html:77
 msgid "feature_2_description"
 msgstr ""
 "Utilizzo di Tailwind CSS e della libreria UI Flowbite per un'interfaccia "
 "elegante e reattiva, facile da personalizzare."
 
-#: templates/pages/home.html:83
+#: templates/pages/home.html:86
 msgid "feature_3_title"
-msgstr "Sicurezza e Ottimizzazione"
+msgstr "Sicurezza e ottimizzazione"
 
-#: templates/pages/home.html:84
+#: templates/pages/home.html:87
 msgid "feature_3_description"
 msgstr ""
 "Misure di sicurezza integrate e ottimizzazioni delle prestazioni per "
 "mantenere la tua applicazione sicura e veloce."
 
-#: templates/pages/home.html:92
+#: templates/pages/home.html:95
 msgid "feature_4_title"
 msgstr "Internazionalizzazione"
 
-#: templates/pages/home.html:93
+#: templates/pages/home.html:96
 msgid "feature_4_description"
 msgstr ""
-"Integrazione di Babel per un supporto multilingua senza problemi, "
-"rendendo la tua app accessibile a un pubblico globale."
+"Integrazione di Babel per un supporto multilingue senza soluzione di "
+"continuità, rendendo la tua app accessibile a un pubblico globale."
 
-#: templates/pages/home.html:102
+#: templates/pages/home.html:105
 msgid "feature_5_title"
 msgstr "Convenienza"
 
-#: templates/pages/home.html:103
+#: templates/pages/home.html:106
 msgid "feature_5_description"
 msgstr ""
-"Sebbene non pretenda di essere perfetto, questo stack tecnologico è "
-"progettato per migliorare la produttività e la soddisfazione degli "
-"sviluppatori."
+"Senza pretendere la perfezione, questo stack tecnologico è progettato per"
+" migliorare la produttività e la soddisfazione degli sviluppatori."
 
-#: templates/pages/home.html:109
+#: templates/pages/home.html:112
 msgid "feature_6_title"
-msgstr "Set di Strumenti Completo"
+msgstr "Set di strumenti completo"
 
-#: templates/pages/home.html:110
+#: templates/pages/home.html:113
 msgid "feature_6_description"
 msgstr ""
-"Dal cambio di tema alla limitazione delle richieste, dal supporto SEO "
+"Dal cambio di tema alla limitazione della frequenza, dal supporto SEO "
 "all'integrazione dell'analisi - un set robusto di funzionalità per "
-"avviare rapidamente il tuo progetto."
+"avviare il tuo progetto."
 
-#: templates/pages/home.html:122
+#: templates/pages/home.html:125
 msgid "FAQ"
 msgstr "Domande frequenti"
 
-#: templates/pages/home.html:128
+#: templates/pages/home.html:131
 msgid "question_1"
 msgstr "Cos'è il Full-Stack Flask Starter Kit?"
 
-#: templates/pages/home.html:130
+#: templates/pages/home.html:133
 msgid "answer_1"
 msgstr ""
 "Un punto di partenza completo per applicazioni web basate su Flask, con "
 "strumenti di design moderni, configurazioni di distribuzione e "
-"funzionalità a misura di sviluppatore."
+"funzionalità facili da usare per gli sviluppatori."
 
-#: templates/pages/home.html:135
+#: templates/pages/home.html:138
 msgid "question_2"
 msgstr "A chi è destinato questo starter kit?"
 
-#: templates/pages/home.html:137
+#: templates/pages/home.html:140
 msgid "answer_2"
 msgstr ""
 "Agli sviluppatori che cercano una solida base Flask con strumenti "
 "frontend moderni integrati e soluzioni di distribuzione."
 
-#: templates/pages/home.html:142
+#: templates/pages/home.html:145
 msgid "question_3"
 msgstr "Quali tecnologie utilizza questo kit?"
 
-#: templates/pages/home.html:144
+#: templates/pages/home.html:147
 msgid "answer_3"
 msgstr "Flask, Tailwind CSS, Flowbite, Docker, MongoDB, Babel e altro ancora."
 
-#: templates/pages/home.html:149
+#: templates/pages/home.html:152
 msgid "question_4"
 msgstr "Questo kit è adatto ai principianti?"
 
-#: templates/pages/home.html:151
+#: templates/pages/home.html:154
 msgid "answer_4"
 msgstr ""
-"Anche se un'esperienza con Flask è vantaggiosa, la nostra documentazione "
-"mira a guidare sviluppatori di vari livelli di competenza."
+"Sebbene un'esperienza con Flask sia vantaggiosa, la nostra documentazione"
+" mira a guidare gli sviluppatori di vari livelli di competenza."
 
-#: templates/pages/home.html:158
+#: templates/pages/home.html:161
 msgid "question_5"
 msgstr "Come funziona la configurazione Docker?"
 
-#: templates/pages/home.html:160
+#: templates/pages/home.html:163
 msgid "answer_5"
 msgstr ""
 "Il nostro kit include una configurazione Docker preimpostata per uno "
 "sviluppo e una distribuzione facili in diversi ambienti."
 
-#: templates/pages/home.html:165
+#: templates/pages/home.html:168
 msgid "question_6"
-msgstr "Posso usarlo per progetti commerciali?"
+msgstr "Posso utilizzarlo per progetti commerciali?"
 
-#: templates/pages/home.html:167
+#: templates/pages/home.html:170
 msgid "answer_6"
 msgstr ""
 "Sì, questo starter kit è open-source e può essere utilizzato sia per "
 "progetti personali che commerciali. Si prega di controllare la licenza "
 "per i dettagli."
 
-#: templates/pages/home.html:172
+#: templates/pages/home.html:175
 msgid "question_7"
 msgstr "Come posso contribuire a questo progetto?"
 
-#: templates/pages/home.html:174
+#: templates/pages/home.html:177
 msgid "answer_7"
 msgstr ""
 "Accogliamo con favore i contributi! Controlla il nostro repository GitHub"
-" per le linee guida sui contributi e le questioni aperte."
+" per le linee guida sui contributi e i problemi aperti."
 
-#: templates/pages/home.html:179
+#: templates/pages/home.html:182
 msgid "question_8"
-msgstr "C'è una comunità o un forum per il supporto?"
+msgstr "Esiste una comunità o un forum per il supporto?"
 
-#: templates/pages/home.html:181
+#: templates/pages/home.html:184
 msgid "answer_8"
 msgstr ""
-"Anche se non abbiamo un forum dedicato, puoi utilizzare le issues di "
+"Anche se non abbiamo un forum dedicato, puoi utilizzare le Issues di "
 "GitHub per domande e discussioni."
+
+#: templates/pages/privacy-policy.html:3
+msgid "privacy_policy_title"
+msgstr "Informativa sulla privacy"
+
+#: templates/pages/privacy-policy.html:5
+msgid "privacy_policy_description"
+msgstr ""
+"L'Informativa sulla privacy del Full-Stack Flask Starter Kit illustra "
+"come raccogliamo, utilizziamo e proteggiamo i tuoi dati. Scopri il nostro"
+" impegno per la tua privacy e la sicurezza dei dati."
+
+#: templates/pages/privacy-policy.html:15
+#: templates/pages/terms-and-conditions.html:12
+msgid "english_only"
+msgstr "Solo in inglese"
+
+#: templates/pages/terms-and-conditions.html:3
+msgid "terms_and_conditions_title"
+msgstr "Termini e condizioni"
+
+#: templates/pages/terms-and-conditions.html:5
+msgid "terms_and_conditions_description"
+msgstr ""
+"Leggi i Termini e le Condizioni del Full-Stack Flask Starter Kit. "
+"Comprendi i tuoi diritti e responsabilità quando usi il nostro toolkit di"
+" sviluppo Flask."
 

@@ -139,15 +139,14 @@ The following features and improvements are planned for future development:
    - Draft and implement a Terms of Service (ToS) page
    - Create and integrate a Privacy Policy page
    - Ensure both documents are easily accessible to users
-6. **🔏 Privacy Policy**: Create and integrate a Privacy Policy page.
-7. **🔔 Notification System**: Add a system for in-app notifications and email alerts.
-8. **🧪 Unit Tests**: Develop a comprehensive suite of unit tests for core functionality.
-9. **📈 User Activity Logging**: Add logging for important user actions and system events.
-10. **📚 Documentation**: 
+6. **🔔 Notification System**: Add a system for in-app notifications and email alerts.
+7. **🧪 Unit Tests**: Develop a comprehensive suite of unit tests for core functionality.
+8. **📈 User Activity Logging**: Add logging for important user actions and system events.
+9. **📚 Documentation**: 
     - Create detailed documentation for the project setup and usage
     - Document API endpoints
     - Implement a robust search functionality across the documentation
-11. **🏁 Finish Default Pages**: Complete and polish all default pages for a cohesive user experience.
+10. **🏁 Finish Default Pages**: Complete and polish all default pages for a cohesive user experience.
 
 We welcome contributions to any of these areas. If you're interested in working on one of these tasks, please open an issue to discuss it before submitting a pull request.
 
