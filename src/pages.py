@@ -24,3 +24,11 @@ def documentation():
 @pages.route('/contact')
 def contact():
     return render_template('pages/contact.html', locale=get_locale())
+
+@pages.route('/privacy-policy')
+def privacy_policy():
+    return render_template('pages/privacy-policy.html', locale=get_locale())
+
+@pages.route('/terms-and-conditions')
+def terms_and_conditions():
+    return render_template('pages/terms-and-conditions.html', locale=get_locale())

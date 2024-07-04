@@ -135,7 +135,10 @@ The following features and improvements are planned for future development:
 2. **👤 User Dashboard**: Create a personalized dashboard for registered users.
 3. **👑 Admin Dashboard**: Develop an administrative interface for managing users and content.
 4. **📊 Example Dashboard**: Build a sample dashboard showcasing data visualization and management capabilities.
-5. **📜 Terms of Service**: Draft and implement a Terms of Service page.
+5. **📜 Legal Documents**: 
+   - Draft and implement a Terms of Service (ToS) page
+   - Create and integrate a Privacy Policy page
+   - Ensure both documents are easily accessible to users
 6. **🔏 Privacy Policy**: Create and integrate a Privacy Policy page.
 7. **🔔 Notification System**: Add a system for in-app notifications and email alerts.
 8. **🧪 Unit Tests**: Develop a comprehensive suite of unit tests for core functionality.
