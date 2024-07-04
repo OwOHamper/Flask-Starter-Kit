@@ -18,6 +18,10 @@ CSP = {
         "'self'",
         "https://analytics.hamper.dev"
     ],
+    "img-src": [
+        "'self'",
+        "data:"
+    ],
 }
 
 
