@@ -132,13 +132,11 @@ msgstr ""
 
 #: templates/pages/explore.html:4 templates/pages/explore.html:19
 #: templates/pages/explore.html:23
-#, fuzzy
 msgid "explore_title"
 msgstr "Explore"
 
 #: templates/pages/explore.html:6 templates/pages/explore.html:20
 #: templates/pages/explore.html:24
-#, fuzzy
 msgid "explore_description"
 msgstr "Discover the Full-Stack Flask Starter Kit's extensive features and capabilities. Explore our powerful web development tools, comprehensive guides, and innovative solutions designed to accelerate your Flask projects. From beginner tutorials to advanced techniques, find everything you need to elevate your web application development."
 

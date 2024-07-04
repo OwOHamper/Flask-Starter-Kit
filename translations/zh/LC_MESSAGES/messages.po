@@ -118,13 +118,11 @@ msgstr "全棧 Flask 入門套件的全面指南。從設置到高級功能，�
 
 #: templates/pages/explore.html:4 templates/pages/explore.html:19
 #: templates/pages/explore.html:23
-#, fuzzy
 msgid "explore_title"
 msgstr "Flask 入門套件"
 
 #: templates/pages/explore.html:6 templates/pages/explore.html:20
 #: templates/pages/explore.html:24
-#, fuzzy
 msgid "explore_description"
 msgstr "使用全棧 Flask 入門套件快速啟動您的網頁應用程式。"
 

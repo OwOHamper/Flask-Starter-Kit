@@ -133,13 +133,11 @@ msgstr ""
 
 #: templates/pages/explore.html:4 templates/pages/explore.html:19
 #: templates/pages/explore.html:23
-#, fuzzy
 msgid "explore_title"
 msgstr "Flask Starter Kit"
 
 #: templates/pages/explore.html:6 templates/pages/explore.html:20
 #: templates/pages/explore.html:24
-#, fuzzy
 msgid "explore_description"
 msgstr ""
 "Starten Sie Ihre Webanwendungen schnell mit dem Full-Stack Flask Starter "
