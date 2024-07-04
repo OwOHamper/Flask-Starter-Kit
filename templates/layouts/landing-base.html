@@ -95,6 +95,9 @@
         <a href="{{ url_for('pages.about') }}" class="block py-2 px-3 {% if active_page == 'about' %}text-white bg-primary-700 rounded md:bg-transparent md:text-primary-700 md:p-0 md:dark:text-primary-500{% else %}text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary-700 md:p-0 dark:text-white md:dark:hover:text-primary-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700{% endif %}" {% if active_page == 'about' %}aria-current="page"{% endif %}>{{ _('about') }}</a>
       </li>
       <li>
+        <a href="{{ url_for('pages.explore') }}" class="block py-2 px-3 {% if active_page == 'explore' %}text-white bg-primary-700 rounded md:bg-transparent md:text-primary-700 md:p-0 md:dark:text-primary-500{% else %}text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary-700 md:p-0 dark:text-white md:dark:hover:text-primary-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700{% endif %}" {% if active_page == 'explore' %}aria-current="page"{% endif %}>{{ _('explore') }}</a>
+      </li>
+      <li>
         <a href="{{ url_for('pages.documentation') }}" class="block py-2 px-3 {% if active_page == 'documentation' %}text-white bg-primary-700 rounded md:bg-transparent md:text-primary-700 md:p-0 md:dark:text-primary-500{% else %}text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary-700 md:p-0 dark:text-white md:dark:hover:text-primary-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700{% endif %}" {% if active_page == 'documentation' %}aria-current="page"{% endif %}>{{ _('documentation') }}</a>
       </li>
       <li>

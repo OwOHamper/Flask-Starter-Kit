@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-07-04 17:32+0200\n"
+"POT-Creation-Date: 2024-07-04 17:54+0200\n"
 "PO-Revision-Date: 2024-07-03 15:11+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: it\n"
@@ -45,28 +45,32 @@ msgid "home"
 msgstr "Home"
 
 #: templates/layouts/landing-base.html:95
-#: templates/layouts/landing-base.html:123
+#: templates/layouts/landing-base.html:126
 msgid "about"
 msgstr "Chi siamo"
 
 #: templates/layouts/landing-base.html:98
+msgid "explore"
+msgstr ""
+
+#: templates/layouts/landing-base.html:101
 msgid "documentation"
 msgstr "Documentazione"
 
-#: templates/layouts/landing-base.html:101
-#: templates/layouts/landing-base.html:132
+#: templates/layouts/landing-base.html:104
+#: templates/layouts/landing-base.html:135
 msgid "contact"
 msgstr "Contatti"
 
-#: templates/layouts/landing-base.html:126
+#: templates/layouts/landing-base.html:129
 msgid "privacy_policy"
 msgstr "Informativa sulla privacy"
 
-#: templates/layouts/landing-base.html:129
+#: templates/layouts/landing-base.html:132
 msgid "terms_and_conditions"
 msgstr "Termini e condizioni"
 
-#: templates/layouts/landing-base.html:137
+#: templates/layouts/landing-base.html:140
 msgid "all_rights_reserved."
 msgstr "Tutti i diritti riservati."
 
@@ -80,7 +84,9 @@ msgstr "Qualcosa manca."
 
 #: templates/pages/404.html:20
 msgid "404_error_description"
-msgstr "Ci dispiace, non riusciamo a trovare quella pagina. Troverai molto da esplorare sulla homepage."
+msgstr ""
+"Ci dispiace, non riusciamo a trovare quella pagina. Troverai molto da "
+"esplorare sulla homepage."
 
 #: templates/pages/404.html:21
 msgid "back_to_homepage"
@@ -123,6 +129,20 @@ msgstr ""
 "Guide complete per il Full-Stack Flask Starter Kit. Dalla configurazione "
 "alle funzionalità avanzate, trova tutte le informazioni necessarie per "
 "massimizzare il tuo sviluppo Flask."
+
+#: templates/pages/explore.html:4 templates/pages/explore.html:19
+#: templates/pages/explore.html:23
+#, fuzzy
+msgid "explore_title"
+msgstr "Flask Starter Kit"
+
+#: templates/pages/explore.html:6 templates/pages/explore.html:20
+#: templates/pages/explore.html:24
+#, fuzzy
+msgid "explore_description"
+msgstr ""
+"Lancia rapidamente le tue applicazioni web con il Full-Stack Flask "
+"Starter Kit."
 
 #: templates/pages/home.html:4 templates/pages/home.html:21
 #: templates/pages/home.html:25

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-07-04 17:32+0200\n"
+"POT-Creation-Date: 2024-07-04 17:54+0200\n"
 "PO-Revision-Date: 2024-07-03 15:11+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_TW\n"
@@ -41,28 +41,32 @@ msgid "home"
 msgstr "首頁"
 
 #: templates/layouts/landing-base.html:95
-#: templates/layouts/landing-base.html:123
+#: templates/layouts/landing-base.html:126
 msgid "about"
 msgstr "關於我們"
 
 #: templates/layouts/landing-base.html:98
+msgid "explore"
+msgstr ""
+
+#: templates/layouts/landing-base.html:101
 msgid "documentation"
 msgstr "文檔"
 
-#: templates/layouts/landing-base.html:101
-#: templates/layouts/landing-base.html:132
+#: templates/layouts/landing-base.html:104
+#: templates/layouts/landing-base.html:135
 msgid "contact"
 msgstr "聯繫我們"
 
-#: templates/layouts/landing-base.html:126
+#: templates/layouts/landing-base.html:129
 msgid "privacy_policy"
 msgstr "隱私政策"
 
-#: templates/layouts/landing-base.html:129
+#: templates/layouts/landing-base.html:132
 msgid "terms_and_conditions"
 msgstr "條款和條件"
 
-#: templates/layouts/landing-base.html:137
+#: templates/layouts/landing-base.html:140
 msgid "all_rights_reserved."
 msgstr "版權所有。"
 
@@ -76,7 +80,7 @@ msgstr "有些東西不見了。"
 
 #: templates/pages/404.html:20
 msgid "404_error_description"
-msgstr 抱歉，我們找不到該頁面。您可以在首頁上找到許多值得探索的內容。"
+msgstr "歉，我們找不到該頁面。您可以在首頁上找到許多值得探索的內容。"
 
 #: templates/pages/404.html:21
 msgid "back_to_homepage"
@@ -111,6 +115,18 @@ msgstr "文檔"
 #: templates/pages/documentation.html:24
 msgid "documentation_description"
 msgstr "全棧 Flask 入門套件的全面指南。從設置到高級功能，找到您需要的所有資訊以最大化您的 Flask 開發。"
+
+#: templates/pages/explore.html:4 templates/pages/explore.html:19
+#: templates/pages/explore.html:23
+#, fuzzy
+msgid "explore_title"
+msgstr "Flask 入門套件"
+
+#: templates/pages/explore.html:6 templates/pages/explore.html:20
+#: templates/pages/explore.html:24
+#, fuzzy
+msgid "explore_description"
+msgstr "使用全棧 Flask 入門套件快速啟動您的網頁應用程式。"
 
 #: templates/pages/home.html:4 templates/pages/home.html:21
 #: templates/pages/home.html:25

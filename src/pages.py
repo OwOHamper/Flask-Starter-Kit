@@ -17,6 +17,10 @@ def home():
 def about():
     return render_template('pages/about.html', locale=get_locale())
 
+@pages.route('/explore')
+def explore():
+    return render_template('pages/explore.html', locale=get_locale())
+
 @pages.route('/documentation')
 def documentation():
     return render_template('pages/documentation.html', locale=get_locale())
