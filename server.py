@@ -40,6 +40,10 @@ if config.PRODUCTION:
 app.register_blueprint(pages)
 
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('pages/404.html')
+
 if __name__ == '__main__':
     logging.info(f"\n🎉 Starting server on http://{config.HOST}:{config.PORT} 🎉")
     
