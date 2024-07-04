@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-07-04 16:39+0200\n"
+"POT-Creation-Date: 2024-07-04 17:32+0200\n"
 "PO-Revision-Date: 2024-07-03 15:11+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -30,7 +30,11 @@ msgstr ""
 
 #: templates/layouts/base.html:9
 msgid "keywords"
-msgstr "Full-Stack Flask Starter Kit, web development tool, Flask projects, Python web framework, Flask features, web application development, Flask starter template, Flask boilerplate, Python web development, Flask project structure"
+msgstr ""
+"Full-Stack Flask Starter Kit, web development tool, Flask projects, "
+"Python web framework, Flask features, web application development, Flask "
+"starter template, Flask boilerplate, Python web development, Flask "
+"project structure"
 
 #: templates/layouts/landing-base.html:83
 msgid "open_main_menu"
@@ -70,240 +74,264 @@ msgstr "All Rights Reserved."
 msgid "404_not_found_title"
 msgstr "404 Page Not Found"
 
-#: templates/pages/about.html:4 templates/pages/about.html:15
-#: templates/pages/about.html:19
+#: templates/pages/404.html:19
+msgid "something_is_missing"
+msgstr "Something's missing."
+
+#: templates/pages/404.html:20
+msgid "404_error_description"
+msgstr "Sorry, we can't find that page. You'll find lots to explore on the home page."
+
+#: templates/pages/404.html:21
+msgid "back_to_homepage"
+msgstr "Back to Homepage"
+
+#: templates/pages/about.html:4 templates/pages/about.html:19
+#: templates/pages/about.html:23
 msgid "about_title"
 msgstr "About"
 
-#: templates/pages/about.html:6 templates/pages/about.html:16
-#: templates/pages/about.html:20
+#: templates/pages/about.html:6 templates/pages/about.html:20
+#: templates/pages/about.html:24
 msgid "about_description"
 msgstr ""
 "Learn about the Full-Stack Flask Starter Kit, its features, and the team "
 "behind this powerful web development tool designed to streamline your "
 "Flask projects."
 
-#: templates/pages/contact.html:4
+#: templates/pages/contact.html:4 templates/pages/contact.html:19
+#: templates/pages/contact.html:23
 msgid "contact_title"
 msgstr "Contact"
 
-#: templates/pages/contact.html:6
+#: templates/pages/contact.html:6 templates/pages/contact.html:20
+#: templates/pages/contact.html:24
 msgid "contact_description"
 msgstr ""
 "Get in touch with the Flask Starter Kit team. We're here to help with "
 "your questions, feedback, or support needs."
 
-#: templates/pages/documentation.html:4
+#: templates/pages/documentation.html:4 templates/pages/documentation.html:19
+#: templates/pages/documentation.html:23
 msgid "documentation_title"
 msgstr "Documentation"
 
-#: templates/pages/documentation.html:6
+#: templates/pages/documentation.html:6 templates/pages/documentation.html:20
+#: templates/pages/documentation.html:24
 msgid "documentation_description"
 msgstr ""
 "Comprehensive guides for the Full-Stack Flask Starter Kit. From setup to "
 "advanced features, find all the information you need to maximize your "
 "Flask development."
 
-#: templates/pages/home.html:4
+#: templates/pages/home.html:4 templates/pages/home.html:21
+#: templates/pages/home.html:25
 msgid "home_title"
 msgstr "Flask Starter Kit"
 
-#: templates/pages/home.html:6
+#: templates/pages/home.html:6 templates/pages/home.html:22
+#: templates/pages/home.html:26
 msgid "home_description"
 msgstr ""
 "Quickly launch your web applications with the Full-Stack Flask Starter "
 "Kit."
 
-#: templates/pages/home.html:29
+#: templates/pages/home.html:36
 msgid "home_hero_heading"
 msgstr "Full-Stack Flask Starter Kit"
 
-#: templates/pages/home.html:30
+#: templates/pages/home.html:37
 msgid "home_hero_description"
 msgstr ""
 "Quickly launch your web applications with the Full-Stack Flask Starter "
 "Kit. Streamlined setup for seamless development and deployment."
 
-#: templates/pages/home.html:34
+#: templates/pages/home.html:41
 msgid "see_features"
 msgstr "See Features"
 
-#: templates/pages/home.html:48
+#: templates/pages/home.html:55
 msgid "view_on_github"
 msgstr "View on GitHub"
 
-#: templates/pages/home.html:59
+#: templates/pages/home.html:66
 msgid "key_features"
 msgstr "🌟 Key Features"
 
-#: templates/pages/home.html:60
+#: templates/pages/home.html:67
 msgid "feature_section_subtitle"
 msgstr "Empowering your web development with a thoughtfully crafted toolkit."
 
-#: templates/pages/home.html:70
+#: templates/pages/home.html:77
 msgid "feature_1_title"
 msgstr "Easy Deployment"
 
-#: templates/pages/home.html:71
+#: templates/pages/home.html:78
 msgid "feature_1_description"
 msgstr ""
 "Pre-configured Docker setup for straightforward deployment, getting your "
 "application up and running quickly."
 
-#: templates/pages/home.html:81
+#: templates/pages/home.html:88
 msgid "feature_2_title"
 msgstr "Modern Design"
 
-#: templates/pages/home.html:82
+#: templates/pages/home.html:89
 msgid "feature_2_description"
 msgstr ""
 "Leveraging Tailwind CSS and Flowbite UI library for a sleek, responsive "
 "interface that's easy to customize."
 
-#: templates/pages/home.html:91
+#: templates/pages/home.html:98
 msgid "feature_3_title"
 msgstr "Security & Optimization"
 
-#: templates/pages/home.html:92
+#: templates/pages/home.html:99
 msgid "feature_3_description"
 msgstr ""
 "Built-in security measures and performance optimizations to keep your "
 "application safe and fast."
 
-#: templates/pages/home.html:100
+#: templates/pages/home.html:107
 msgid "feature_4_title"
 msgstr "Internalization"
 
-#: templates/pages/home.html:101
+#: templates/pages/home.html:108
 msgid "feature_4_description"
 msgstr ""
 "Babel integration for seamless multi-language support, making your app "
 "accessible to a global audience."
 
-#: templates/pages/home.html:110
+#: templates/pages/home.html:117
 msgid "feature_5_title"
 msgstr "Convenience"
 
-#: templates/pages/home.html:111
+#: templates/pages/home.html:118
 msgid "feature_5_description"
 msgstr ""
 "While not claiming perfection, this tech stack is crafted to enhance "
 "developer productivity and satisfaction."
 
-#: templates/pages/home.html:117
+#: templates/pages/home.html:124
 msgid "feature_6_title"
 msgstr "Comprehensive Toolset"
 
-#: templates/pages/home.html:118
+#: templates/pages/home.html:125
 msgid "feature_6_description"
 msgstr ""
 "From theme switching to rate limiting, SEO support to analytics "
 "integration - a robust set of features to jumpstart your project."
 
-#: templates/pages/home.html:130
+#: templates/pages/home.html:137
 msgid "FAQ"
 msgstr "Frequently asked questions"
 
-#: templates/pages/home.html:136
+#: templates/pages/home.html:143
 msgid "question_1"
 msgstr "What is the Full-Stack Flask Starter Kit?"
 
-#: templates/pages/home.html:138
+#: templates/pages/home.html:145
 msgid "answer_1"
 msgstr ""
 "A comprehensive starting point for Flask-based web applications, "
 "featuring modern design tools, deployment configurations, and developer-"
 "friendly features."
 
-#: templates/pages/home.html:143
+#: templates/pages/home.html:150
 msgid "question_2"
 msgstr "Who is this starter kit for?"
 
-#: templates/pages/home.html:145
+#: templates/pages/home.html:152
 msgid "answer_2"
 msgstr ""
 "Developers looking for a robust Flask foundation with integrated modern "
 "frontend tools and deployment solutions."
 
-#: templates/pages/home.html:150
+#: templates/pages/home.html:157
 msgid "question_3"
 msgstr "What technologies does this kit use?"
 
-#: templates/pages/home.html:152
+#: templates/pages/home.html:159
 msgid "answer_3"
 msgstr "Flask, Tailwind CSS, Flowbite, Docker, MongoDB, Babel, and more."
 
-#: templates/pages/home.html:157
+#: templates/pages/home.html:164
 msgid "question_4"
 msgstr "Is this kit suitable for beginners?"
 
-#: templates/pages/home.html:159
+#: templates/pages/home.html:166
 msgid "answer_4"
 msgstr ""
 "While some Flask experience is beneficial, our documentation aims to "
 "guide developers of various skill levels."
 
-#: templates/pages/home.html:166
+#: templates/pages/home.html:173
 msgid "question_5"
 msgstr "How does the Docker setup work?"
 
-#: templates/pages/home.html:168
+#: templates/pages/home.html:175
 msgid "answer_5"
 msgstr ""
 "Our kit includes a pre-configured Docker setup for easy development and "
 "deployment across different environments."
 
-#: templates/pages/home.html:173
+#: templates/pages/home.html:180
 msgid "question_6"
 msgstr "Can I use this for commercial projects?"
 
-#: templates/pages/home.html:175
+#: templates/pages/home.html:182
 msgid "answer_6"
 msgstr ""
 "Yes, this starter kit is open-source and can be used for both personal "
 "and commercial projects. Please check the license for details."
 
-#: templates/pages/home.html:180
+#: templates/pages/home.html:187
 msgid "question_7"
 msgstr "How can I contribute to this project?"
 
-#: templates/pages/home.html:182
+#: templates/pages/home.html:189
 msgid "answer_7"
 msgstr ""
 "We welcome contributions! Check our GitHub repository for contribution "
 "guidelines and open issues."
 
-#: templates/pages/home.html:187
+#: templates/pages/home.html:194
 msgid "question_8"
 msgstr "Is there a community or forum for support?"
 
-#: templates/pages/home.html:189
+#: templates/pages/home.html:196
 msgid "answer_8"
 msgstr ""
 "While we don't have a dedicated forum, you can use GitHub issues for "
 "questions and discussions."
 
-#: templates/pages/privacy-policy.html:3
+#: templates/pages/privacy-policy.html:3 templates/pages/privacy-policy.html:18
+#: templates/pages/privacy-policy.html:22
 msgid "privacy_policy_title"
 msgstr "Privacy Policy"
 
-#: templates/pages/privacy-policy.html:5
+#: templates/pages/privacy-policy.html:5 templates/pages/privacy-policy.html:19
+#: templates/pages/privacy-policy.html:23
 msgid "privacy_policy_description"
 msgstr ""
 "Full-Stack Flask Starter Kit's Privacy Policy outlines how we collect, "
 "use, and protect your data. Learn about our commitment to your privacy "
 "and data security."
 
-#: templates/pages/privacy-policy.html:15
-#: templates/pages/terms-and-conditions.html:12
+#: templates/pages/privacy-policy.html:34
+#: templates/pages/terms-and-conditions.html:31
 msgid "english_only"
 msgstr "English only"
 
 #: templates/pages/terms-and-conditions.html:3
+#: templates/pages/terms-and-conditions.html:18
+#: templates/pages/terms-and-conditions.html:22
 msgid "terms_and_conditions_title"
-msgstr "Is there a community or forum for support?"
+msgstr "Terms & Conditions"
 
 #: templates/pages/terms-and-conditions.html:5
+#: templates/pages/terms-and-conditions.html:19
+#: templates/pages/terms-and-conditions.html:23
 msgid "terms_and_conditions_description"
 msgstr ""
 "Read the Full-Stack Flask Starter Kit's Terms and Conditions. Understand "
