@@ -13,7 +13,11 @@ CSP = {
     "script-src": [
         "'self'",
         "analytics.hamper.dev"
-    ]
+    ],
+    "connect-src": [
+        "'self'",
+        "https://analytics.hamper.dev"
+    ],
 }
 
 

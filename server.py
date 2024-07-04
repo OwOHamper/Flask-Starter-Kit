@@ -20,7 +20,7 @@ app = Flask(__name__)
 
 
 #You can enable force_https if you have a SSL certificate and everything set up
-Talisman(app, force_https=False, content_security_policy=config.CSP)
+Talisman(app, content_security_policy=config.CSP)
 app.wsgi_app = ProxyFix(app.wsgi_app)
 
 limiter = Limiter(
