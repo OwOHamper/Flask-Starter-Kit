@@ -1,4 +1,4 @@
-from flask import Flask, render_template, send_from_directory, request
+from flask import Flask, render_template, send_from_directory, request, g
 import logging
 
 from werkzeug.middleware.proxy_fix import ProxyFix
@@ -45,6 +45,12 @@ app.register_blueprint(pages)
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('pages/404.html')
+
+@app.after_request
+def set_lang_cookie(response):
+    if g.get('set_cookie', False):
+        response.set_cookie('lang', g.lang, max_age=60*60*24*365)
+    return response
 
 if __name__ == '__main__':
     logging.info(f"\n🎉 Starting server on http://{config.HOST}:{config.PORT} 🎉")

@@ -127,6 +127,27 @@ To set up Babel for internationalization:
 
 Add new routes in `server.py`, create corresponding templates, and implement additional functionality in the `src/` directory.
 
+## 📝 TODO
+
+The following features and improvements are planned for future development:
+
+1. **🔐 Authentication System**: Implement user registration, login, logout, and password reset functionality.
+2. **👤 User Dashboard**: Create a personalized dashboard for registered users.
+3. **👑 Admin Dashboard**: Develop an administrative interface for managing users and content.
+4. **📊 Example Dashboard**: Build a sample dashboard showcasing data visualization and management capabilities.
+5. **📜 Terms of Service**: Draft and implement a Terms of Service page.
+6. **🔏 Privacy Policy**: Create and integrate a Privacy Policy page.
+7. **🔔 Notification System**: Add a system for in-app notifications and email alerts.
+8. **🧪 Unit Tests**: Develop a comprehensive suite of unit tests for core functionality.
+9. **📈 User Activity Logging**: Add logging for important user actions and system events.
+10. **📚 Documentation**: 
+    - Create detailed documentation for the project setup and usage
+    - Document API endpoints
+    - Implement a robust search functionality across the documentation
+11. **🏁 Finish Default Pages**: Complete and polish all default pages for a cohesive user experience.
+
+We welcome contributions to any of these areas. If you're interested in working on one of these tasks, please open an issue to discuss it before submitting a pull request.
+
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
