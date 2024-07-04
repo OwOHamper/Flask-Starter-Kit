@@ -7,6 +7,15 @@ load_dotenv()
 
 
 ACCEPTED_LANGUAGES = ['en', 'de', 'it', 'zh']
+# See https://github.com/GoogleCloudPlatform/flask-talisman?tab=readme-ov-file#content-security-policy
+CSP = {
+    "default-src": "'self'",
+    "script-src": [
+        "'self'",
+        "analytics.hamper.dev"
+    ]
+}
+
 
 
 PRODUCTION = os.getenv('PRODUCTION')
