@@ -4,6 +4,18 @@
 
 {% block description %} {{ _('privacy_policy_description') }} {% endblock %}
 
+{% block head %}
+
+{{ super() }}
+
+<meta property="og:title" content="{{ _('privacy_policy_title') }}">
+<meta property="og:description" content="{{ _('privacy_policy_description') }}">
+<meta property="og:url" content="https://flask-starter.com/privacy-policy">
+
+<meta name="twitter:title" content="{{ _('privacy_policy_title') }}">
+<meta name="twitter:description" content="{{ _('privacy_policy_description') }}">
+
+{% endblock %}
 
 {% block content %}
     <div class="container mx-auto px-4 py-8 max-w-4xl">

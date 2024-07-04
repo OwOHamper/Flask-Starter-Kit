@@ -8,6 +8,7 @@
 {% block head %}
 {{ super() }}
 
+<!-- If you want too add something to the head of website add it here -->
 
 <link rel="canonical" href="https://flaskstarter.com">
 <link rel="alternate" hreflang="x-default" href="https://flaskstarter.com/">
@@ -16,7 +17,13 @@
 <link rel="alternate" hreflang="zh-TW" href="https://flaskstarter.com?lang=zh">
 <link rel="alternate" hreflang="de-DE" href="https://flaskstarter.com?lang=de">
 
-<!-- If you want too add something to the head of website add it here -->
+
+<meta property="og:title" content="{{ _('home_title') }}">
+<meta property="og:description" content="{{ _('home_description') }}">
+<meta property="og:url" content="https://flask-starter.com">
+
+<meta name="twitter:title" content="{{ _('home_title') }}">
+<meta name="twitter:description" content="{{ _('home_description') }}">
 
 {% endblock %}
 

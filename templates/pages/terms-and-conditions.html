@@ -4,6 +4,18 @@
 
 {% block description %} {{ _('terms_and_conditions_description') }} {% endblock %}
 
+{% block head %}
+
+{{ super() }}
+
+<meta property="og:title" content="{{ _('terms_and_conditions_title') }}">
+<meta property="og:description" content="{{ _('terms_and_conditions_description') }}">
+<meta property="og:url" content="https://flask-starter.com/terms-and-conditions">
+
+<meta name="twitter:title" content="{{ _('terms_and_conditions_title') }}">
+<meta name="twitter:description" content="{{ _('terms_and_conditions_description') }}">
+
+{% endblock %}
 
 {% block content %}
 <div class="container mx-auto px-4 py-8 max-w-4xl">
