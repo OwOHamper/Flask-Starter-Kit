@@ -19,6 +19,8 @@
 
 This project provides a streamlined setup for seamless development and deployment of Flask-based web applications, tailored to a specific workflow and preferences.
 
+>This project is currently in its early stages of development. Much of the initial content has been generated with the assistance of AI to provide a starting point and placeholder text. As development progresses, this content will be reviewed and replaced to accurately represents the project's goals and functionality.
+
 ## 🌟 Key Features
 
 1. **🚀 Easy Deployment**: Pre-configured Docker setup for straightforward deployment.
