@@ -14,7 +14,8 @@ from flask_limiter.util import get_remote_address
 from src import config
 from src.localization import get_locale
 
-from src.pages import pages
+from src.blueprints.pages import pages
+from src.blueprints.auth import auth
 
 app = Flask(__name__)
 
@@ -40,6 +41,7 @@ if config.PRODUCTION:
 
 
 app.register_blueprint(pages)
+app.register_blueprint(auth)
 
 
 @app.errorhandler(404)
