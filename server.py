@@ -19,6 +19,7 @@ from src.blueprints.auth import auth, login_manager
 
 from flask_pymongo import PyMongo
 from flask_bcrypt import Bcrypt
+from flask_seasurf import SeaSurf
 
 app = Flask(__name__)
 app.config['MONGO_URI'] = config.MONGO_URI
@@ -44,6 +45,7 @@ bcrypt = Bcrypt(app)
 
 
 babel = Babel(app, locale_selector=get_locale)
+csrf = SeaSurf(app)
 
 
 if config.PRODUCTION:

@@ -7,6 +7,7 @@ function validateAndSubmit() {
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value;
     const rememberMe = document.getElementById('remember').checked;
+    const csrfToken = document.getElementById('csrf').value;
 
     if (email === '') {
         showToast('danger', 'Please enter your email address.', 3000);
@@ -37,6 +38,7 @@ function validateAndSubmit() {
             "email": email,
             "password": password,
             "remember": rememberMe,
+            "_csrf_token": csrfToken
         }),
     })
     .then(response => response.json())

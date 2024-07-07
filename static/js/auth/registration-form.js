@@ -8,6 +8,7 @@ function validateAndSubmit() {
     const password = document.getElementById('password').value;
     const confirmPassword = document.getElementById('confirm-password').value;
     const termsCheckbox = document.getElementById('terms');
+    const csrfToken = document.getElementById('csrf').value;
 
     if (email === '') {
         showToast('danger', 'Please enter your email address.', 3000);
@@ -53,6 +54,7 @@ function validateAndSubmit() {
         body: JSON.stringify({
             "email": email,
             "password": password,
+            "_csrf_token": csrfToken
         }),
     })
     .then(response => response.json())
