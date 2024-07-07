@@ -1,5 +1,5 @@
-import logging
-import os
+import logging, os
+from datetime import timedelta
 
 from dotenv import load_dotenv
 
@@ -25,13 +25,17 @@ CSP = {
 }
 
 
+REMEMBER_COOKIE_DURATION = timedelta(days=30)
+PERMANENT_SESSION_LIFETIME = timedelta(days=30)
+
 
 PRODUCTION = os.getenv('PRODUCTION')
 HOST = os.getenv('HOST')
 PORT = os.getenv('PORT')
 MONGO_URI = os.getenv('MONGO_URI')
+SECRET_KEY = os.getenv('SECRET_KEY')
 
-if None in (PORT, MONGO_URI):
+if None in (PORT, MONGO_URI, SECRET_KEY, PRODUCTION):
     raise ValueError('One or more environmental variables are missing!')
 
 if HOST is None:

@@ -15,9 +15,16 @@ from src import config
 from src.localization import get_locale
 
 from src.blueprints.pages import pages
-from src.blueprints.auth import auth
+from src.blueprints.auth import auth, login_manager
+
+from flask_pymongo import PyMongo
+from flask_bcrypt import Bcrypt
 
 app = Flask(__name__)
+app.config['MONGO_URI'] = config.MONGO_URI
+app.config['SECRET_KEY'] = config.SECRET_KEY
+app.config['REMEMBER_COOKIE_DURATION'] = config.REMEMBER_COOKIE_DURATION
+app.config['PERMANENT_SESSION_LIFETIME'] = config.PERMANENT_SESSION_LIFETIME
 
 
 #You can enable force_https if you have a SSL certificate and everything set up
@@ -28,9 +35,13 @@ app.wsgi_app = ProxyFix(app.wsgi_app)
 limiter = Limiter(
     get_remote_address,
     app=app,
-    storage_uri=config.MONGO_URI,
+    storage_uri=app.config['MONGO_URI'],
     strategy='fixed-window', # 'moving-window' when you want to prevent burst attacks
 )
+
+mongo = PyMongo(app)
+bcrypt = Bcrypt(app)
+
 
 babel = Babel(app, locale_selector=get_locale)
 
@@ -40,8 +51,11 @@ if config.PRODUCTION:
     Minify(app=app, html=True, js=True, cssless=True, go=False)
 
 
+login_manager.init_app(app)
+
 app.register_blueprint(pages)
-app.register_blueprint(auth)
+app.register_blueprint(auth, mongo=mongo, bcrypt=bcrypt)
+
 
 
 @app.errorhandler(404)

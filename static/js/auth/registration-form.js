@@ -42,7 +42,7 @@ function validateAndSubmit() {
     }
 
     // If all validations pass, show success message and submit the data
-    showToast('success', 'Creating your account...', 3000);
+    // showToast('success', 'Creating your account...', 3000);
     
     // Use fetch to send the data to the server
     fetch('/register', {
@@ -58,7 +58,11 @@ function validateAndSubmit() {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            showToast('success', 'Account created successfully!', 3000);
+            showToast('success', data.message, 3000);
+            document.getElementById('email').value = '';
+            document.getElementById('password').value = '';
+            document.getElementById('confirm-password').value = '';
+            document.getElementById('terms').checked = false;
             // Redirect or update UI as needed
             setTimeout(() => {
                 window.location.href = '/login';  // Adjust as needed

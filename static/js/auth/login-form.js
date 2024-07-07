@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function validateAndSubmit() {
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value;
+    const rememberMe = document.getElementById('remember').checked;
 
     if (email === '') {
         showToast('danger', 'Please enter your email address.', 3000);
@@ -35,6 +36,7 @@ function validateAndSubmit() {
         body: JSON.stringify({
             "email": email,
             "password": password,
+            "remember": rememberMe,
         }),
     })
     .then(response => response.json())
@@ -43,7 +45,7 @@ function validateAndSubmit() {
             showToast('success', 'Login successful!', 3000);
             // Redirect or update UI as needed
             setTimeout(() => {
-                window.location.href = '/dashboard';  // Adjust as needed
+                window.location.href = '/';  // Adjust as needed
             }, 1000);
         } else {
             showToast('danger', data.message || 'Login failed. Please try again.', 3000);

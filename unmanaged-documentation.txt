@@ -9,3 +9,8 @@ Privacy Policy
 https://www.privacypolicytemplate.net/
 Refund Policy (maybe)
 
+
+
+PERSONAL NOTE:
+JWT reccomendations:
+https://claude.ai/chat/df7e4c26-76c1-4c67-917b-60fa41b00cb8
