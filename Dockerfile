@@ -1,8 +1,27 @@
-FROM python:3.9
+FROM node:20 as css-builder
 
 WORKDIR /app
 
-RUN apt-get update && apt-get install -y nodejs npm
+COPY package.json package-lock.json ./
+RUN npm install
+
+COPY ./static/js ./static/js
+COPY ./templates ./templates
+COPY tailwind.config.js ./
+
+RUN npx tailwindcss -i ./static/src/input.css -o ./static/dist/css/output.css --minify
+
+
+
+FROM python:3.9-slim
+
+WORKDIR /app
+
+# Install only the necessary dependencies for pybabel
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gettext \
+    && rm -rf /var/lib/apt/lists/*
+
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
@@ -10,8 +29,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-RUN npm install
-RUN npx tailwindcss -i ./static/src/input.css -o ./static/dist/css/output.css --minify
+COPY --from=css-builder /app/static/dist/css/output.css ./static/dist/css/
 
 RUN pybabel compile -d translations
 
