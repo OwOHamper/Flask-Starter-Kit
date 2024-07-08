@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
+#CONSTANTS DEFINED HERE (config.py)
 ACCEPTED_LANGUAGES = ['en', 'de', 'it', 'zh']
 # See https://github.com/GoogleCloudPlatform/flask-talisman?tab=readme-ov-file#content-security-policy
 CSP = {
@@ -23,12 +24,13 @@ CSP = {
         "data:"
     ],
 }
-
-
 REMEMBER_COOKIE_DURATION = timedelta(days=30)
 PERMANENT_SESSION_LIFETIME = timedelta(days=30)
 
+FORCE_HTTPS = False
 
+
+#CONSTANTS FROM ENVIRONMENTAL VARIABLES
 PRODUCTION = os.getenv('PRODUCTION')
 HOST = os.getenv('HOST')
 PORT = os.getenv('PORT')
