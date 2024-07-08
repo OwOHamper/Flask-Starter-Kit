@@ -223,7 +223,7 @@ def login_post():
     password = request.json.get('password')
     remember = request.json.get('remember')
     
-    if not email or not password or not remember:
+    if not email or not password or remember == None:
         return jsonify({'success': False, 'message': 'Email, password and remember are required.'}), 400
     
     if type(email) != str or type(password) != str or type(remember) != bool:
