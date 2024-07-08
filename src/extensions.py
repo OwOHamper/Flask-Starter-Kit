@@ -37,7 +37,7 @@ login_manager.login_view = 'auth.login'
 
 if config.PRODUCTION:
     compress = Compress()
-    minify = Minify()
+    minify = Minify(html=True, js=True, cssless=True, go=False)
 
 
 
@@ -60,4 +60,4 @@ def init_extensions(app):
     
     if config.PRODUCTION:
         compress.init_app(app)
-        minify.init_app(app, html=True, js=True, cssless=True, go=False)
+        minify.init_app(app)
