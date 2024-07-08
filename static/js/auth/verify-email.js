@@ -5,8 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const timerContainer = document.getElementById('timerContainer');
     const emailInput = document.getElementById('emailInput');
 
-    const totalTime = 10;
+    const totalTime = 60;
     let countdown = totalTime;
+    if (document.getElementById('verification-failed') !== null) {
+        countdown = 5;
+    }
     updateButtonState();
 
     function updateButtonState() {

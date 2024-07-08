@@ -1,8 +1,8 @@
 
-import uuid
+import uuid, logging
 from datetime import datetime, timezone
 
-from flask import Blueprint, render_template, request, jsonify, session, redirect, url_for, flash
+from flask import Blueprint, render_template, request, jsonify, session, redirect, url_for, flash, make_response
 from flask_login import login_user, logout_user, login_required, current_user
 from flask_mail import Mail, Message
 
@@ -49,6 +49,7 @@ def build_user(user_data):
     
     
 def send_verification_email(user_email):
+    logging.info(f"Sending verification email to {user_email}")
     token = serializer.dumps(user_email, salt='email-verify-salt')
     
     verify_url = url_for('auth.verify_email', token=token, _external=True)
@@ -56,6 +57,7 @@ def send_verification_email(user_email):
     html = render_template('emails/verify-email.html', verification_url=verify_url)
     
     msg = Message('Verify Your Email',
+                  sender=config.MAIL_DEFAULT_SENDER,
                   recipients=[user_email])
     
     msg.html = html
@@ -89,6 +91,23 @@ def load_user(alternative_id):
     return None
 
 
+def rate_limit_exceeded(route_name=None):
+    base_message = "You've made too many requests in a short time. Please wait a moment and try again."
+    
+    route_specific_messages = {
+        "auth.login": "Too many login attempts. Please wait a moment before trying again.",
+        "auth.register": "We've received too many registration requests. Please try again in a few minutes.",
+        "auth.resend_verification_email": "You've requested too many verification emails. Please check your inbox and try again later."
+    }
+    
+    message = route_specific_messages.get(route_name, base_message)
+    
+    if route_name == "auth.verify_email":
+        return make_response(render_template('pages/auth/email-verified.html', locale=get_locale(), success=False))
+    
+    return make_response(jsonify({'success': False, 'message': message}), 429)
+
+
 @auth.route('/login')
 def login():
     if current_user.is_authenticated:
@@ -105,25 +124,27 @@ def register():
 
 @auth.route('/verify-email')
 def verify_email_page():
-    return render_template('pages/auth/verify-email.html', locale=get_locale())
+    email = request.args.get('email')
+    return render_template('pages/auth/verify-email.html', locale=get_locale(), email=email)
 
 @auth.route('/verify-email/<token>')
-@limiter.limit("5 per minute; 50 per day")
+@limiter.limit("25 per hour; 125 per day", on_breach=lambda limit: rate_limit_exceeded('auth.verify_email'))
 def verify_email(token):
     try:
         email = serializer.loads(token, salt='email-verify-salt', max_age=3600)  # Token expires after 1 hour
     except:
-        return jsonify({'success': False, 'message': 'The verification link is invalid or has expired.'}), 400
+        return render_template('pages/auth/email-verified.html', locale=get_locale(), success=False)
     
     user = mongo.db.users.find_one({'email': email})
     if user:
         mongo.db.users.update_one({'email': email}, {'$set': {'email_verified': True}})
-        return jsonify({'success': True, 'message': 'Email verified successfully!'}), 200
+        return render_template('pages/auth/email-verified.html', locale=get_locale(), success=True)
     else:
-        return jsonify({'success': False, 'message': 'User not found.'}), 404
+        return render_template('pages/auth/email-verified.html', locale=get_locale(), success=False)
+
 
 @auth.route('/resend-verification-email', methods=['POST'])
-@limiter.limit("3 per hour")
+@limiter.limit("5 per hour", on_breach=lambda limit: rate_limit_exceeded('auth.resend_verification_email'))
 def resend_verification_email():
     email = request.json.get('email')
     
@@ -133,13 +154,16 @@ def resend_verification_email():
     
     user = mongo.db.users.find_one({'email': email})
     
-
-    if user and user['email_verified'] == True:
-        send_verification_email(email)
+    if not user:
+        return jsonify({'success': False, 'message': 'User with that email does not exist.'}), 400
     
-    return jsonify({'success': True, 'message': 'If the email exists and is not verified, a verification email has been sent.'}), 200
+    if user['email_verified'] == False:
+        send_verification_email(email)
+        return jsonify({'success': True, 'message': 'Verification email sent. Please check your inbox.'}), 200
+    else:
+        return jsonify({'success': False, 'message': 'This email address is already verified.'}), 400
 
-@limiter.limit("5 per minute; 50 per day")
+@limiter.limit("5 per minute; 50 per day", on_breach=lambda limit: rate_limit_exceeded('auth.register'))
 @auth.route("/register", methods=["POST"])
 @auth.route("/signup", methods=["POST"])
 def register_post():
@@ -168,29 +192,29 @@ def register_post():
     
     
     existing_user = mongo.db.users.find_one({'email': email})
-    #PREVENTS USER ENUMERATION ATTACKS, by not letting attacker/user know where account with that email exists
-    if not existing_user:    
-        password_hash = bcrypt.generate_password_hash(password).decode('utf-8')
-        alternative_id = str(uuid.uuid4())
-        
-        
-        mongo.db.users.insert_one(build_user({
-            'email': email,
-            'password_hash': password_hash,
-            'alternative_id': alternative_id
-        }))
-        
-        send_verification_email(email)
-        
-        return redirect(url_for('auth.verify_email_page', email=email))
+    #Preventing user enumeration on used email is way too hardcode
+    if existing_user:    
+        return jsonify({'success': False, 'message': 'User with that email already exists.'}), 400
     
+    password_hash = bcrypt.generate_password_hash(password).decode('utf-8')
+    alternative_id = str(uuid.uuid4())
+    
+    
+    mongo.db.users.insert_one(build_user({
+        'email': email,
+        'password_hash': password_hash,
+        'alternative_id': alternative_id
+    }))
+    
+    send_verification_email(email)
+            
     
     return jsonify({'success': True, 'message': 'User registered successfully!'}), 200
     
     
 
 @auth.route("/login", methods=["POST"])
-@limiter.limit("10 per minute; 200 per day")
+@limiter.limit("10 per minute; 200 per day", on_breach=lambda limit: rate_limit_exceeded('auth.login'))
 def login_post():
     if current_user.is_authenticated:
         return jsonify({'success': False, 'message': 'You are already logged in.'}), 400
@@ -223,7 +247,7 @@ def login_post():
 
 
 @auth.route("/logout")
-@limiter.limit("20 per minute")
+@limiter.limit("20 per minute", on_breach=lambda limit: rate_limit_exceeded('auth.logout'))
 def logout_post():
     logout_user()
     return jsonify({'success': True, 'message': 'User logged out successfully!'}), 200

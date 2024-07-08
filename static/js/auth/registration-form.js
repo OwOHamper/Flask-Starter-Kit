@@ -67,6 +67,9 @@ function validateAndSubmit() {
             document.getElementById('confirm-password').value = '';
             document.getElementById('terms').checked = false;
             // Redirect or update UI as needed
+            setTimeout(() => {
+                window.location.href = '/verify-email?email=' + email;
+            }, 1000);
         } else {
             showToast('danger', data.message || 'Registration failed. Please try again.', 3000);
         }
