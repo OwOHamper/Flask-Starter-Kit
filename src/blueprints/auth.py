@@ -111,7 +111,7 @@ def rate_limit_exceeded(route_name=None):
 @auth.route('/login')
 def login():
     if current_user.is_authenticated:
-        return redirect('/')
+        return redirect('/you-are-authenticated-log-out-first')
 
     return render_template('pages/auth/login.html', locale=get_locale())
 
@@ -119,7 +119,7 @@ def login():
 @auth.route('/signup')
 def register():
     if current_user.is_authenticated:
-        return redirect('/')
+        return redirect('/you-are-authenticated-log-out-first')
     return render_template('pages/auth/registration.html', locale=get_locale())
 
 @auth.route('/verify-email')
