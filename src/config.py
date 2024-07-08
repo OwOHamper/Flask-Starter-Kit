@@ -6,6 +6,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
+WAITRESS_THREADS = 8
+
+
 #CONSTANTS DEFINED HERE (config.py)
 ACCEPTED_LANGUAGES = ['en', 'de', 'it', 'zh']
 # See https://github.com/GoogleCloudPlatform/flask-talisman?tab=readme-ov-file#content-security-policy

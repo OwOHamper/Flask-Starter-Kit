@@ -62,7 +62,7 @@ if __name__ == '__main__':
         logging.info("🚨 Running in PRODUCTION mode 🚨")
         
         from waitress import serve
-        serve(app, host=config.HOST, port=config.PORT)
+        serve(app, host=config.HOST, port=config.PORT, threads=config.WAITRESS_THREADS)
 
     else:
         logging.info("🚨 Running in DEVELOPMENT mode 🚨")
