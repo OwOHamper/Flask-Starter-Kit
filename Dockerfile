@@ -5,6 +5,7 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm install
 
+COPY ./static/src ./static/src
 COPY ./static/js ./static/js
 COPY ./templates ./templates
 COPY tailwind.config.js ./
