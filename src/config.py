@@ -30,15 +30,28 @@ PERMANENT_SESSION_LIFETIME = timedelta(days=30)
 FORCE_HTTPS = False
 
 
+MAIL_DEFAULT_SENDER = ("Hamper from Flask Starter Kit", "verification@flaskstarter.com")
+
+
 #CONSTANTS FROM ENVIRONMENTAL VARIABLES
 PRODUCTION = os.getenv('PRODUCTION')
 HOST = os.getenv('HOST')
 PORT = os.getenv('PORT')
 MONGO_URI = os.getenv('MONGO_URI')
 SECRET_KEY = os.getenv('SECRET_KEY')
+SERIALIZER_SECRET_KEY = os.getenv('SERIALIZER_SECRET_KEY')
 
-if None in (PORT, MONGO_URI, SECRET_KEY, PRODUCTION):
+
+#EMAIL STUFF
+MAIL_SERVER = os.getenv('MAIL_SERVER')
+MAIL_USERNAME = os.getenv('MAIL_USERNAME')
+MAIL_PASSWORD = os.getenv('MAIL_PASSWORD')
+
+if None in (PRODUCTION, PORT, MONGO_URI, SECRET_KEY, SERIALIZER_SECRET_KEY):
     raise ValueError('One or more environmental variables are missing!')
+
+if None in (MAIL_SERVER, MAIL_USERNAME, MAIL_PASSWORD):
+    raise ValueError('One or more email environmental variables are missing!')
 
 if HOST is None:
     HOST = '0.0.0.0'

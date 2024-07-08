@@ -3,7 +3,7 @@ module.exports = {
   darkMode: 'class',
   content: [
     "./templates/**/*.html",
-    "./static/src/**/*.js",
+    "./static/js/**/*.js",
     "./node_modules/flowbite/**/*.js",
   ],
   theme: {

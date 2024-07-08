@@ -54,6 +54,7 @@ function validateAndSubmit() {
         body: JSON.stringify({
             "email": email,
             "password": password,
+            "terms": termsCheckbox.checked,
             "_csrf_token": csrfToken
         }),
     })
@@ -66,9 +67,6 @@ function validateAndSubmit() {
             document.getElementById('confirm-password').value = '';
             document.getElementById('terms').checked = false;
             // Redirect or update UI as needed
-            setTimeout(() => {
-                window.location.href = '/login';  // Adjust as needed
-            }, 1000);
         } else {
             showToast('danger', data.message || 'Registration failed. Please try again.', 3000);
         }

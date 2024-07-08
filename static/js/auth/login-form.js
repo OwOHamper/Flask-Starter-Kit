@@ -26,7 +26,7 @@ function validateAndSubmit() {
     }
 
     // If all validations pass, show success message and submit the data
-    showToast('success', 'Logging in...', 3000);
+    // showToast('success', 'Logging in...', 3000);
     
     // Use fetch to send the data to the server
     fetch('/login', {
