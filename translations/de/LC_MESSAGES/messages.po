@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-07-04 17:54+0200\n"
+"POT-Creation-Date: 2024-07-09 22:51+0200\n"
 "PO-Revision-Date: 2024-07-03 15:11+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -27,6 +27,12 @@ msgid "under_construction_description"
 msgstr ""
 "Wir entwickeln ein schlankes, effizientes Flask Starter Kit, um Ihre "
 "Webentwicklung zu beschleunigen - bald verfügbar!"
+
+#: templates/components/forms/forgot-password-form.html:14
+#: templates/components/forms/login-form.html:35
+#: templates/components/forms/registration-form.html:30
+msgid "EMAIL_PLACEHOLDER"
+msgstr "your@email.com"
 
 #: templates/layouts/base.html:9
 msgid "keywords"

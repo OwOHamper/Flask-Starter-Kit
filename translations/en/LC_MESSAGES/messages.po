@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-07-04 17:54+0200\n"
+"POT-Creation-Date: 2024-07-09 22:51+0200\n"
 "PO-Revision-Date: 2024-07-03 15:11+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -27,6 +27,12 @@ msgid "under_construction_description"
 msgstr ""
 "Building a sleek, efficient Flask Starter Kit to supercharge your web "
 "development – launching soon!"
+
+#: templates/components/forms/forgot-password-form.html:14
+#: templates/components/forms/login-form.html:35
+#: templates/components/forms/registration-form.html:30
+msgid "EMAIL_PLACEHOLDER"
+msgstr "your@email.com"
 
 #: templates/layouts/base.html:9
 msgid "keywords"
@@ -138,7 +144,12 @@ msgstr "Explore"
 #: templates/pages/explore.html:6 templates/pages/explore.html:20
 #: templates/pages/explore.html:24
 msgid "explore_description"
-msgstr "Discover the Full-Stack Flask Starter Kit's extensive features and capabilities. Explore our powerful web development tools, comprehensive guides, and innovative solutions designed to accelerate your Flask projects. From beginner tutorials to advanced techniques, find everything you need to elevate your web application development."
+msgstr ""
+"Discover the Full-Stack Flask Starter Kit's extensive features and "
+"capabilities. Explore our powerful web development tools, comprehensive "
+"guides, and innovative solutions designed to accelerate your Flask "
+"projects. From beginner tutorials to advanced techniques, find everything"
+" you need to elevate your web application development."
 
 #: templates/pages/home.html:4 templates/pages/home.html:21
 #: templates/pages/home.html:25
