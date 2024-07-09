@@ -20,6 +20,7 @@
 {% if success %}
 
 <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto min-h-screen bg-gray-50 dark:bg-gray-900">
+    {% include 'components/form-logo.html' %}
     <div class="w-full max-w-md bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
         <div class="p-6 space-y-6 sm:p-8 text-center">
             <svg class="w-16 h-16 mx-auto text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -44,6 +45,7 @@
 {% else %}
 
 <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto min-h-screen bg-gray-50 dark:bg-gray-900">
+    {% include 'components/form-logo.html' %}
     <div class="w-full max-w-md bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
         <div class="p-6 space-y-6 sm:p-8 text-center">
             <svg class="w-16 h-16 mx-auto text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
