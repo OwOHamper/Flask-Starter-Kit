@@ -1,8 +1,10 @@
 from flask import Flask, render_template, g
 import logging
 
-from werkzeug.middleware.proxy_fix import ProxyFix
-
+# from werkzeug.middleware.proxy_fix import ProxyFix
+# from werkzeug.middleware.proxy_fix import orig
+from src.utils import ProxyFix
+# print(orig)
 from src import config
 
 
