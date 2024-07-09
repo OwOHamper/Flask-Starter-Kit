@@ -19,15 +19,14 @@ auth.register_blueprint(verify_email_bp)
 auth.register_blueprint(password_reset_bp)
     
 
-
-
 #USE of alternative id instead of user id, so login can be invalidated without changing the user id
 class User():
-    def __init__(self, alternative_id):
+    def __init__(self, alternative_id, is_active=True):
         self.id = alternative_id
+        self.is_active = is_active
         
     def is_active(self):
-        return True
+        return self.is_active
     
     def is_authenticated(self):
         return True
@@ -42,7 +41,8 @@ class User():
 def load_user(alternative_id):
     user_data = mongo.db.users.find_one({'alternative_id': alternative_id})
     if user_data:
-        return User(user_data['alternative_id'])
+        is_active = user_data['security.account_status'] == 'active' and user_data['security.email_verified']
+        return User(user_data['alternative_id'], is_active=is_active)
     return None
 
 
@@ -133,7 +133,17 @@ def login_post():
     
     user = mongo.db.users.find_one({'email': email})
     if user:
-        if bcrypt.check_password_hash(user['password'], password):    
+        if bcrypt.check_password_hash(user['password'], password): 
+            if user['security']['account_status'] != 'active':
+                if user['security']['account_status'] == 'deactivated':
+                    return jsonify({'success': False, 'message': 'Your account has been deactivated. Please contact support for assistance.'}), 400
+                elif user['security']['account_status'] == 'suspended':
+                    return jsonify({'success': False, 'message': 'Your account has been suspended. Please contact support for assistance.'}), 400
+                else:
+                    return jsonify({'success': False, 'message': 'Your account is currently inactive. Please contact support for assistance.'}), 400
+            elif not user['security']['email_verified']:
+                return jsonify({'success': False, 'message': 'Please verify your email address to activate your account. Check your inbox for a verification email or request a new one.'}), 400
+               
             mongo.db.users.update_one({'email': email}, {'$set': {
                 'last_login': datetime.now(tz=timezone.utc),
                 'metadata.last_login_ip': request.remote_addr,

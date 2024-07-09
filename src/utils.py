@@ -45,7 +45,6 @@ def build_user(user_data):
         'alternative_id': user_data.get('alternative_id'),
         'created_at': datetime.now(tz=timezone.utc),
         'updated_at': datetime.now(tz=timezone.utc),
-        'is_active': True,
         'last_login': None,
         'email_verified': False,
         'roles': ['user'],
