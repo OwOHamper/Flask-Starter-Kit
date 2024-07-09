@@ -7,6 +7,7 @@
 {{ super() }}
 
 <script src="{{ url_for('static', filename='js/load-theme.js') }}"></script>
+<link rel="canonical" href="{{ url_for('auth.register', _external=True) }}">
 
 {% endblock %}
 
