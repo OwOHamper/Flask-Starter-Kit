@@ -1,4 +1,8 @@
+from flask import make_response, render_template, jsonify, request
+from datetime import datetime, timezone, timedelta
 import re
+
+from src.localization import get_locale
 
 def validate_password(password):
     if len(password) < 8:
@@ -33,3 +37,56 @@ class ProxyFix:
             environ['REMOTE_ADDR'] = environ['HTTP_X_REAL_IP']
 
         return self.app(environ, start_response)
+    
+def build_user(user_data):
+    return {
+        'email': user_data.get('email'),
+        'password': user_data.get('password_hash'),
+        'alternative_id': user_data.get('alternative_id'),
+        'created_at': datetime.now(tz=timezone.utc),
+        'updated_at': datetime.now(tz=timezone.utc),
+        'is_active': True,
+        'last_login': None,
+        'email_verified': False,
+        'roles': ['user'],
+        'profile': {
+            'profile_picture': None,
+        },  
+        'preferences': {
+            'language': get_locale()
+        },
+        'security': {
+            'failed_login_attempts': 0,
+            'last_password_change': None,
+            'password_reset_token': None,
+            'password_reset_token_expires': None
+        },
+        'connections': {},
+        'account_status': 'active',  # Can be 'active', 'suspended', 'deactivated'
+        'metadata': {
+            'registration_ip': request.remote_addr,
+            'last_login_ip': None,
+            'last_user_agent': request.headers.get('User-Agent')
+        }
+    }
+    
+    
+def rate_limit_exceeded(route_name=None):
+    base_message = "You've made too many requests in a short time. Please wait a moment and try again."
+    
+    route_specific_messages = {
+        "auth.login": "Too many login attempts. Please wait a moment before trying again.",
+        "auth.register": "We've received too many registration requests. Please try again in a few minutes.",
+        "auth.resend_verification_email": "You've requested too many verification emails. Please check your inbox and try again later.",
+        "auth.forgot_password": "Too many password reset requests. For security reasons, please wait before trying again.",
+        "auth.reset_password_post": "Too many password reset requests. For security reasons, please wait before trying again."
+    }
+    
+    message = route_specific_messages.get(route_name, base_message)
+    
+    if route_name == "auth.verify_email":
+        return make_response(render_template('pages/auth/email-verified.html', locale=get_locale(), success=False))
+    elif route_name == "auth.reset_password":
+        return make_response(render_template('pages/auth/reset-password-error.html', locale=get_locale()))
+    
+    return make_response(jsonify({'success': False, 'message': message}), 429)

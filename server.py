@@ -9,7 +9,7 @@ from src import config
 
 
 from src.blueprints.pages import pages
-from src.blueprints.auth import auth, login_manager
+from src.blueprints.auth.auth import auth
 
 
 
