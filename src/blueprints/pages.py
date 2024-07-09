@@ -37,8 +37,3 @@ def privacy_policy():
 @pages.route('/terms-and-conditions')
 def terms_and_conditions():
     return render_template('pages/terms-and-conditions.html', locale=get_locale())
-
-
-@pages.route('/get-headers')
-def get_headers():
-    return str(request.headers)
