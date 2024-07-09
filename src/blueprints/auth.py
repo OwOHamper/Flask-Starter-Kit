@@ -125,6 +125,8 @@ def register():
 @auth.route('/verify-email')
 def verify_email_page():
     email = request.args.get('email')
+    if not email:
+        return render_template('pages/auth/verify-email.html', locale=get_locale())
     return render_template('pages/auth/verify-email.html', locale=get_locale(), email=email)
 
 @auth.route('/verify-email/<token>')
