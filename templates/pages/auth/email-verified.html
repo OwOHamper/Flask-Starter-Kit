@@ -7,13 +7,12 @@
 {{ super() }}
 
 {% if not success %}
-<!-- <script src="{{ url_for('static', filename='js/auth/failed-email-verification.js') }}"></script> -->
+
  <script src="{{ url_for('static', filename='js/auth/verify-email.js') }}"></script>
 {% endif %}
-
 <script src="{{ url_for('static', filename='js/load-theme.js') }}"></script>
-
 {% endblock %}
+<meta name="robots" content="noindex, nofollow">
 
 {% block bodycontent %}
 
