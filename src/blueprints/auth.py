@@ -345,7 +345,12 @@ def login_post():
     user = mongo.db.users.find_one({'email': email})
     if user:
         if bcrypt.check_password_hash(user['password'], password):    
-            mongo.db.users.update_one({'email': email}, {'$set': {'last_login': datetime.now(tz=timezone.utc)}})
+            mongo.db.users.update_one({'email': email}, {'$set': {
+                'last_login': datetime.now(tz=timezone.utc),
+                'metadata.last_login_ip': request.remote_addr,
+                'metadata.last_user_agent': request.headers.get('User-Agent'),
+                'security.failed_login_attempts': 0
+            }})
             
             
             user = User(user['alternative_id'])
