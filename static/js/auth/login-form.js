@@ -46,10 +46,17 @@ function validateAndSubmit() {
         if (data.success) {
             showToast('success', 'Login successful!', 3000);
             // Redirect or update UI as needed
+            // if redirect field in data is set, redirect to that path
+            let redirect = data.redirect || '/';
             setTimeout(() => {
-                window.location.href = '/';  // Adjust as needed
+                window.location.href = redirect;
             }, 1000);
         } else {
+            if (data.redirect) {
+                setTimeout(() => {
+                    window.location.href = data.redirect;
+                }, 0);
+            }
             showToast('danger', data.message || 'Login failed. Please try again.', 3000);
         }
     })

@@ -2,7 +2,7 @@
 import uuid, logging
 from datetime import datetime, timezone
 
-from flask import Blueprint, render_template, request, jsonify, session, redirect
+from flask import Blueprint, render_template, request, jsonify, session, redirect, url_for
 from flask_login import login_user, logout_user, current_user
 
 from src import config
@@ -134,15 +134,16 @@ def login_post():
     user = mongo.db.users.find_one({'email': email})
     if user:
         if bcrypt.check_password_hash(user['password'], password): 
-            if user['security']['account_status'] != 'active':
-                if user['security']['account_status'] == 'deactivated':
+            if user['account_status'] != 'active':
+                if user['account_status'] == 'deactivated':
                     return jsonify({'success': False, 'message': 'Your account has been deactivated. Please contact support for assistance.'}), 400
-                elif user['security']['account_status'] == 'suspended':
+                elif user['account_status'] == 'suspended':
                     return jsonify({'success': False, 'message': 'Your account has been suspended. Please contact support for assistance.'}), 400
                 else:
                     return jsonify({'success': False, 'message': 'Your account is currently inactive. Please contact support for assistance.'}), 400
-            elif not user['security']['email_verified']:
-                return jsonify({'success': False, 'message': 'Please verify your email address to activate your account. Check your inbox for a verification email or request a new one.'}), 400
+            
+            elif not user['email_verified']:
+                return jsonify({'success': False, 'redirect': url_for('auth.verify_email.verify_email_page', email=email), 'message': 'Please verify your email address to activate your account. Check your inbox for a verification email or request a new one.'}), 400
                
             mongo.db.users.update_one({'email': email}, {'$set': {
                 'last_login': datetime.now(tz=timezone.utc),
