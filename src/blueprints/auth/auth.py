@@ -145,11 +145,16 @@ def login_post():
             elif not user['email_verified']:
                 return jsonify({'success': False, 'redirect': url_for('auth.verify_email.verify_email_page', email=email), 'message': 'Please verify your email address to activate your account. Check your inbox for a verification email or request a new one.'}), 400
                
-            mongo.db.users.update_one({'email': email}, {'$set': {
+            mongo.db.users.update_one({'email': email},
+                {'$set': {
                 'last_login': datetime.now(tz=timezone.utc),
                 'metadata.last_login_ip': request.remote_addr,
                 'metadata.last_user_agent': request.headers.get('User-Agent'),
-                'security.failed_login_attempts': 0
+                'security.failed_login_attempts': 0,
+                
+            }},
+                {'$inc': {
+                'usage_stats.total_logins': 1
             }})
             
             
@@ -162,7 +167,10 @@ def login_post():
 
             return jsonify({'success': True, 'message': 'User logged in successfully!'}), 200
         else:
-            mongo.db.users.update_one({'email': email}, {'$inc': {'security.failed_login_attempts': 1}})
+            mongo.db.users.update_one({'email': email}, {'$inc': {
+                'security.failed_login_attempts': 1,
+                'usage_stats.total_failed_logins': 1
+                }})
         
     return jsonify({'success': False, 'message': 'Incorrect email or password.'}), 401
 

@@ -40,7 +40,7 @@ class ProxyFix:
     
 def build_user(user_data):
     return {
-        'email': user_data.get('email'),
+        'email': user_data.get('email').lower(),
         'password': user_data.get('password_hash'),
         'alternative_id': user_data.get('alternative_id'),
         'created_at': datetime.now(tz=timezone.utc),
@@ -50,15 +50,18 @@ def build_user(user_data):
         'roles': ['user'],
         'profile': {
             'profile_picture': None,
+            'display_name': user_data.get('email').split('@'),
+            'bio': None
         },  
         'preferences': {
             'language': get_locale()
         },
         'security': {
             'failed_login_attempts': 0,
-            'last_password_change': None,
+            'last_password_change': datetime.now(tz=timezone.utc),
             'password_reset_token': None,
-            'password_reset_token_expires': None
+            'password_reset_token_expires': None,
+            'two_factor_enabled': False
         },
         'connections': {},
         'account_status': 'active',  # Can be 'active', 'suspended', 'deactivated'
@@ -66,7 +69,14 @@ def build_user(user_data):
             'registration_ip': request.remote_addr,
             'last_login_ip': None,
             'last_user_agent': request.headers.get('User-Agent')
+        },
+        'usage_stats': {
+            'total_logins': 0,
+            'total_failed_logins': 0,
+            'total_password_resets': 0,
+            'total_verification_emails_sent': 1 # The first verification email is sent during registration
         }
+            
     }
     
     

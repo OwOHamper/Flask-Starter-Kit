@@ -67,6 +67,8 @@ def resend_verification_email():
         return jsonify({'success': False, 'message': 'User with that email does not exist.'}), 400
     
     if user['email_verified'] == False:
+        mongo.db.users.update_one({'email': email}, {'$inc': {'usage_stats.total_verification_emails_sent': 1}})
+        
         send_verification_email(email)
         return jsonify({'success': True, 'message': 'Verification email sent. Please check your inbox.'}), 200
     else:
