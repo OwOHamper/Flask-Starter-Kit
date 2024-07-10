@@ -53,7 +53,7 @@ def verify_email(token):
 
 
 @verify_email_bp.route('/resend-verification-email', methods=['POST'])
-@limiter.limit("5 per hour", on_breach=lambda limit: rate_limit_exceeded('auth.resend_verification_email'))
+@limiter.limit("15 per hour", on_breach=lambda limit: rate_limit_exceeded('auth.resend_verification_email'))
 def resend_verification_email():
     email = request.json.get('email')
     

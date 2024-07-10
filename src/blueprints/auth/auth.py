@@ -75,7 +75,7 @@ def register_post():
     terms = request.json.get('terms')
     
     if not email or not password or not terms:
-        return jsonify({'success': False, 'message': 'Email and password are required.'}), 400
+         return jsonify({'success': False, 'message': 'Email and password are required.'}), 400
     
     if type(email) != str or type(password) != str or type(terms) != bool:
         return jsonify({'success': False, 'message': 'Email and password must be strings and terms must be boolean.'}), 400
