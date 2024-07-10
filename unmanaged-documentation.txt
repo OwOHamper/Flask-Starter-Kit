@@ -20,3 +20,7 @@ secrets.token_hex(32)
 
 Key features of auth
 unified auth flow
+
+User without email verified account tries to connect oauth, handle this
+forgot password on unactivated account
+Look at account status, if suspended the user is logged in, but is_authenticated is False

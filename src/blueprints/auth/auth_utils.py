@@ -133,6 +133,5 @@ def load_user(alternative_id):
     user_data = mongo.db.users.find_one({'alternative_id': alternative_id})
     if user_data:
         is_active = user_data['account_status'] == 'active' and user_data['email_verified']
-        logging.info(f"User {alternative_id} is active: {is_active}")
         return User(user_data['alternative_id'], is_active_variable=is_active)
     return None

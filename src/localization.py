@@ -11,12 +11,12 @@ def update_user_locale(locale):
 def get_locale():
     lang = request.args.get('lang')
     
-    g.set_cookie = False
+    g.set_lang_cookie = False
     g.set_user_locale = False
     
     if lang in ACCEPTED_LANGUAGES:
         g.lang = lang
-        g.set_cookie = True
+        g.set_lang_cookie = True
         update_user_locale(lang)
         return lang
     

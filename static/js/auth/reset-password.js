@@ -54,7 +54,7 @@ function validateAndSubmit() {
                 window.location.href = '/login';
             }, 1000);
         } else {
-            showToast('danger', data.message || 'Password reset failed. Please try again.', 3000);
+            showToast('danger', data.message || 'Password reset failed. Please try again.', 5000);
         }
     })
     .catch(error => {

@@ -49,7 +49,7 @@ function resendVerificationEmail() {
     })
     .catch(error => {
 
-        showToast('danger', 'An error occurred. Please try again later.', 3000);
+        showToast('danger', 'An error occurred. Please try again later.', 5000);
         console.error('Error:', error);
     });
 }

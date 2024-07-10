@@ -39,7 +39,7 @@ function sendNewResetLink() {
         if (data.success) {
             showToast('success', 'A new password reset link has been sent to your email.', 3000);
         } else {
-            showToast('danger', data.message || 'Failed to send reset link. Please try again.', 3000);
+            showToast('danger', data.message || 'Failed to send reset link. Please try again.', 5000);
 
             setTimeout(() => {
                 resendButton.disabled = false;

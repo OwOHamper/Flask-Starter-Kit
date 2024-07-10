@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 showToast('success', 'Verification email resent. Please check your inbox.', 3000);
                 startResendCooldown();
             } else {
-                showToast('danger', data.message || 'Failed to resend verification email. Please try again.', 3000);
+                showToast('danger', data.message || 'Failed to resend verification email. Please try again.', 5000);
             }
         })
         .catch(error => {

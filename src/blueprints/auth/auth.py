@@ -113,6 +113,9 @@ def login_post():
     
     user = mongo.db.users.find_one({'email': email})
     if user:
+        if user['auth_provider'] != 'local':
+            #Provide feedback that this user is already registered with a different provider
+            return jsonify({'success': False, 'message': 'An account already exists for this email. Please use your social login method to sign in.'}), 400
         if bcrypt.check_password_hash(user['password'], password): 
             if user['account_status'] != 'active':
                 if user['account_status'] == 'deactivated':
@@ -143,7 +146,7 @@ def login_post():
             session.clear()
             session.permanent = remember
             
-            g.set_cookie = True
+            g.set_lang_cookie = True
             g.lang = user['preferences']['language']
             
             login_user(userObject, remember=remember)

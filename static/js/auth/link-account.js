@@ -1,12 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const loginButton = document.getElementById('loginButton');
-    loginButton.addEventListener('click', validateAndSubmit);
+    const linkButton = document.getElementById('linkButton');
+    linkButton.addEventListener('click', linkAccount);
 });
 
-function validateAndSubmit() {
+function linkAccount() {
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value;
-    const rememberMe = document.getElementById('remember').checked;
     const csrfToken = document.getElementById('csrf').value;
 
     if (email === '') {
@@ -25,11 +24,9 @@ function validateAndSubmit() {
         return;
     }
 
-    // If all validations pass, show success message and submit the data
-    // showToast('success', 'Logging in...', 3000);
     
     // Use fetch to send the data to the server
-    fetch('/login', {
+    fetch('/link-account', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -37,14 +34,13 @@ function validateAndSubmit() {
         body: JSON.stringify({
             "email": email,
             "password": password,
-            "remember": rememberMe,
             "_csrf_token": csrfToken
         }),
     })
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            showToast('success', 'Login successful!', 3000);
+            showToast('success', 'Account linked successfully. Redirecting...', 3000);
             // Redirect or update UI as needed
             // if redirect field in data is set, redirect to that path
             let redirect = data.redirect || '/';
@@ -53,7 +49,9 @@ function validateAndSubmit() {
             }, 1000);
         } else {
             if (data.redirect) {
-                window.location.href = data.redirect;
+                setTimeout(() => {
+                    window.location.href = data.redirect;
+                }, 0);
             }
             showToast('danger', data.message || 'Login failed. Please try again.', 5000);
         }
