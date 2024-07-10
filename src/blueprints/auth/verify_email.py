@@ -29,9 +29,16 @@ def send_verification_email(user_email):
 
 @verify_email_bp.route('/verify-email')
 def verify_email_page():
+    #Check if account is already verified
     email = request.args.get('email')
     if not email:
         return render_template('pages/auth/verify-email.html', locale=get_locale())
+    
+    user = mongo.db.users.find_one({'email': email})
+    if user:
+        if user['email_verified']:
+            return render_template('pages/auth/email-verified.html', locale=get_locale(), success=True)
+
     return render_template('pages/auth/verify-email.html', locale=get_locale(), email=email)
 
 
