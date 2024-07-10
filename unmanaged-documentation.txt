@@ -17,3 +17,6 @@ https://claude.ai/chat/df7e4c26-76c1-4c67-917b-60fa41b00cb8
 
 Generate secret keys using:
 secrets.token_hex(32)
+
+Key features of auth
+unified auth flow
