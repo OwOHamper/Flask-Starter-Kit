@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-07-09 22:51+0200\n"
+"POT-Creation-Date: 2024-07-10 16:23+0200\n"
 "PO-Revision-Date: 2024-07-03 15:11+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: it\n"
@@ -28,9 +28,9 @@ msgstr ""
 "Stiamo costruendo un Kit di Avvio Flask elegante ed efficiente per "
 "potenziare il vostro sviluppo web - presto disponibile!"
 
-#: templates/components/forms/forgot-password-form.html:14
-#: templates/components/forms/login-form.html:35
-#: templates/components/forms/registration-form.html:30
+#: templates/components/forms/auth/forgot-password-form.html:14
+#: templates/components/forms/auth/login-form.html:39
+#: templates/components/forms/auth/registration-form.html:34
 msgid "EMAIL_PLACEHOLDER"
 msgstr "your@email.com"
 
@@ -79,6 +79,22 @@ msgstr "Termini e condizioni"
 #: templates/layouts/landing-base.html:140
 msgid "all_rights_reserved."
 msgstr "Tutti i diritti riservati."
+
+#: templates/pages/401.html:3
+msgid "401_unauthorized_title"
+msgstr "401 Accesso non autorizzato"
+
+#: templates/pages/401.html:19
+msgid "401_unauthorized_message"
+msgstr "Accesso negato."
+
+#: templates/pages/401.html:20
+msgid "401_error_description"
+msgstr "Spiacenti, non hai il permesso di accedere a questa pagina. Per favore, accedi o contatta l'amministratore se ritieni che questo sia un errore."
+
+#: templates/pages/401.html:21
+msgid "go_to_login"
+msgstr "Vai al login"
 
 #: templates/pages/404.html:3
 msgid "404_not_found_title"
