@@ -1,19 +1,17 @@
-from flask import Flask, render_template, g
 import logging
 
-# from werkzeug.middleware.proxy_fix import ProxyFix
-# from werkzeug.middleware.proxy_fix import orig
-from src.utils import ProxyFix
-# print(orig)
-from src import config
+from flask import Flask, render_template, g
+from flask_login import current_user
 
+
+from src.extensions import init_extensions, mongo
+from src.utils import ProxyFix
+from src import config
 
 from src.blueprints.pages import pages
 from src.blueprints.auth.auth import auth
 
 
-
-from src.extensions import init_extensions
 
 def create_app():
     app = Flask(__name__)
@@ -50,6 +48,12 @@ def create_app():
     def set_lang_cookie(response):
         if g.get('set_cookie', False):
             response.set_cookie('lang', g.lang, max_age=60*60*24*365)
+            g.set_cookie = False
+            
+        if g.get('set_user_locale', False):
+            mongo.db.users.update_one({'alternative_id': current_user.get_id()}, {'$set': {'preferences.language': g.lang}})
+            gset_user_locale = False
+            
         return response
 
     return app

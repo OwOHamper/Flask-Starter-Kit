@@ -2,7 +2,7 @@
 import uuid, logging
 from datetime import datetime, timezone
 
-from flask import Blueprint, render_template, request, jsonify, session, redirect, url_for
+from flask import Blueprint, render_template, request, jsonify, session, redirect, url_for, g
 from flask_login import login_user, logout_user, current_user
 
 from src import config
@@ -41,7 +41,7 @@ class User():
 def load_user(alternative_id):
     user_data = mongo.db.users.find_one({'alternative_id': alternative_id})
     if user_data:
-        is_active = user_data['security.account_status'] == 'active' and user_data['security.email_verified']
+        is_active = user_data['account_status'] == 'active' and user_data['email_verified']
         return User(user_data['alternative_id'], is_active=is_active)
     return None
 
@@ -152,18 +152,21 @@ def login_post():
                 'metadata.last_user_agent': request.headers.get('User-Agent'),
                 'security.failed_login_attempts': 0,
                 
-            }},
-                {'$inc': {
+            },
+                 '$inc': {
                 'usage_stats.total_logins': 1
             }})
             
             
-            user = User(user['alternative_id'])
+            userObject = User(user['alternative_id'])
             
             session.clear()
             session.permanent = remember
             
-            login_user(user, remember=remember)
+            g.set_cookie = True
+            g.lang = user['preferences']['language']
+            
+            login_user(userObject, remember=remember)
 
             return jsonify({'success': True, 'message': 'User logged in successfully!'}), 200
         else:
