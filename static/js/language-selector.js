@@ -28,6 +28,12 @@ function getCookie(name) {
     return null;
 }
 
+function removeLangQueryParam() {
+    const url = new URL(window.location.href);
+    url.searchParams.delete('lang');
+    window.history.replaceState({}, '', url);
+}
+
 
 
 // Handle language selection
@@ -40,15 +46,10 @@ languageOptions.forEach(option => {
 
         setCookie('lang', this.getAttribute('data-lang'), 365);
 
+        removeLangQueryParam();
+
         languageDropdownFlowbite.hide();
         window.location.reload();
 
     });
 });
-
-// Close dropdown when clicking outside
-// document.addEventListener('click', function(e) {
-//     if (!languageButton.contains(e.target) && !languageDropdown.contains(e.target)) {
-//         languageDropdown.classList.add('hidden');
-//     }
-// });
