@@ -97,7 +97,7 @@ PRODUCTION = PRODUCTION.lower() == 'true'
 
 
 logging.basicConfig(
-    filename="server.log",
+    filename="app.log",
     level=logging.DEBUG if not PRODUCTION else logging.INFO,
     format="%(module)-10s:%(lineno)-4d | %(levelname)-8s: %(asctime)s | %(message)s",
     datefmt="%d/%m/%y %H:%M:%S"
