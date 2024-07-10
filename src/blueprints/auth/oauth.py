@@ -81,8 +81,13 @@ def oauth2_authorize(provider):
     if not provider_data:
         abort(404)
         
+    #GOOGLE supports multiple callback urls;    GITHUB doesn't
+    #GITHUB supports query parameters;          GOOGLE doesn't
     if link:
-        redirect_url = url_for('auth.oauth.oauth2_callback_link', provider=provider, _external=True)
+        if provider == 'google':
+            redirect_url = url_for('auth.oauth.oauth2_callback_link', provider=provider, _external=True)
+        elif provider == 'github':
+            redirect_url = url_for('auth.oauth.oauth2_callback', provider=provider, link=True, _external=True)
     else:
         redirect_url = url_for('auth.oauth.oauth2_callback', provider=provider, _external=True)
         
@@ -102,7 +107,7 @@ def oauth2_authorize(provider):
 
 def callback_initialization(provider):
     if current_user.is_authenticated:
-        return redirect('/you-are-authenticated-log-out-first')
+        return False, redirect('/you-are-authenticated-log-out-first')
         
     provider_data = config.OAUTH2_PROVIDERS.get(provider)
     if not provider_data:
@@ -114,7 +119,7 @@ def callback_initialization(provider):
             if key.startswith("error"):
                 flash(f"Error: {value}", "error")
                 logging.error(f"Error from {provider}: {value}")
-        return redirect(url_for('auth.login'))
+        return False, redirect(url_for('auth.login'))
     
     if request.args.get('state') != session.get('oauth2_state'):
         logging.error(f"OAuth 2.0 state mismatch for {provider}")
@@ -152,14 +157,18 @@ def callback_initialization(provider):
         
     user_data = get_oauth2_user_data(provider, oauth2_token)
     
-    return {
+    return True, {
         'oauth2_token': oauth2_token,
         'user_data': user_data,
     }
 @oauth_bp.route('/callback/<provider>')
 def oauth2_callback(provider):
+    if request.args.get('link'):
+        return oauth2_callback_link(provider)
     
-    return_data = callback_initialization(provider)
+    success, return_data = callback_initialization(provider)
+    if not success:
+        return return_data
     
     user_data = return_data['user_data']
     oauth2_token = return_data['oauth2_token']
@@ -291,7 +300,9 @@ def oauth2_callback(provider):
 def oauth2_callback_link(provider):
     
     
-    return_data = callback_initialization(provider)
+    success, return_data = callback_initialization(provider)
+    if not success:
+        return return_data
     
     user_data = return_data['user_data']
     oauth2_token = return_data['oauth2_token']
