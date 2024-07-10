@@ -7,8 +7,9 @@ from flask_login import login_user, logout_user, current_user
 
 from src import config
 from src.localization import get_locale
-from src.extensions import limiter, bcrypt, mongo, login_manager
-from src.utils import validate_email, validate_password, rate_limit_exceeded, build_user
+from src.extensions import limiter, bcrypt, mongo
+
+from src.blueprints.auth.auth_utils import validate_email, validate_password, rate_limit_exceeded, build_user, User
 
 from src.blueprints.auth.verify_email import send_verification_email, verify_email_bp
 from src.blueprints.auth.password_reset import password_reset_bp
@@ -21,31 +22,6 @@ auth.register_blueprint(password_reset_bp)
 auth.register_blueprint(oauth_bp)
     
 
-#USE of alternative id instead of user id, so login can be invalidated without changing the user id
-class User():
-    def __init__(self, alternative_id, is_active=True):
-        self.id = alternative_id
-        self.is_active = is_active
-        
-    def is_active(self):
-        return self.is_active
-    
-    def is_authenticated(self):
-        return True
-    
-    def is_anonymous(self):
-        return False
-    
-    def get_id(self):
-        return self.id
-
-@login_manager.user_loader
-def load_user(alternative_id):
-    user_data = mongo.db.users.find_one({'alternative_id': alternative_id})
-    if user_data:
-        is_active = user_data['account_status'] == 'active' and user_data['email_verified']
-        return User(user_data['alternative_id'], is_active=is_active)
-    return None
 
 
 @auth.route('/login')
@@ -105,7 +81,9 @@ def register_post():
     mongo.db.users.insert_one(build_user({
         'email': email,
         'password_hash': password_hash,
-        'alternative_id': alternative_id
+        'alternative_id': alternative_id,
+        'auth_provider': 'local',
+        'name': email.split('@')[0]
     }))
     
     send_verification_email(email)
@@ -151,7 +129,7 @@ def login_post():
                 {'$set': {
                 'last_login': datetime.now(tz=timezone.utc),
                 'metadata.last_login_ip': request.remote_addr,
-                'metadata.last_user_agent': request.headers.get('User-Agent'),
+                'metadata.last_login_user_agent': request.headers.get('User-Agent'),
                 'security.failed_login_attempts': 0,
                 
             },

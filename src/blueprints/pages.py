@@ -10,7 +10,6 @@ def static_from_root():
     return send_from_directory("static/", request.path[1:])
 
 @pages.route('/')
-@pages.route('/home')
 def home():
     return render_template('pages/home.html', locale=get_locale())
 

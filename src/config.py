@@ -45,9 +45,8 @@ OAUTH2_PROVIDERS = {
         'client_secret': os.environ.get('GOOGLE_CLIENT_SECRET'),
         'authorize_url': 'https://accounts.google.com/o/oauth2/auth',
         'token_url': 'https://accounts.google.com/o/oauth2/token',
-        'userinfo': {
-            'url': 'https://www.googleapis.com/oauth2/v3/userinfo',
-            'email': lambda json: json['email'],
+        'endpoints' : {
+            'userinfo': 'https://www.googleapis.com/oauth2/v3/userinfo'
         },
         'scopes': ['https://www.googleapis.com/auth/userinfo.email', 'https://www.googleapis.com/auth/userinfo.profile'],
     },
@@ -59,9 +58,9 @@ OAUTH2_PROVIDERS = {
         'client_secret': os.environ.get('GITHUB_CLIENT_SECRET'),
         'authorize_url': 'https://github.com/login/oauth/authorize',
         'token_url': 'https://github.com/login/oauth/access_token',
-        'userinfo': {
-            'url': 'https://api.github.com/user/emails',
-            'email': lambda json: json[0]['email'],
+        'endpoints' : {
+            'userinfo': 'https://api.github.com/user',
+            'emailinfo': 'https://api.github.com/user/emails'
         },
         'scopes': ['user:email', 'read:user'],
     },

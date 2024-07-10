@@ -39,10 +39,15 @@ def create_app():
     app.register_blueprint(pages)
     app.register_blueprint(auth)
 
+    @app.errorhandler(401)
+    def unauthorized(e):
+        return render_template('pages/401.html')
+
 
     @app.errorhandler(404)
     def page_not_found(e):
         return render_template('pages/404.html')
+    
 
     @app.after_request
     def set_lang_cookie(response):

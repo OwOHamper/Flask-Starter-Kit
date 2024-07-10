@@ -5,7 +5,7 @@ from flask import Blueprint, render_template, request, jsonify, url_for
 from flask_mail import Message
 
 from src.extensions import limiter, mongo, serializer, mail, bcrypt
-from src.utils import validate_email, rate_limit_exceeded, validate_password
+from src.blueprints.auth.auth_utils import validate_email, rate_limit_exceeded, validate_password
 from src.localization import get_locale
 from src import config
 
