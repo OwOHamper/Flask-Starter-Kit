@@ -1,6 +1,5 @@
 import logging
 
-
 from flask import Blueprint, render_template, request, jsonify, url_for
 from flask_mail import Message
 

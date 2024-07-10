@@ -12,11 +12,13 @@ from src.utils import validate_email, validate_password, rate_limit_exceeded, bu
 
 from src.blueprints.auth.verify_email import send_verification_email, verify_email_bp
 from src.blueprints.auth.password_reset import password_reset_bp
+from src.blueprints.auth.oauth import oauth_bp
 
 auth = Blueprint('auth', __name__)
 
 auth.register_blueprint(verify_email_bp)
 auth.register_blueprint(password_reset_bp)
+auth.register_blueprint(oauth_bp)
     
 
 #USE of alternative id instead of user id, so login can be invalidated without changing the user id
