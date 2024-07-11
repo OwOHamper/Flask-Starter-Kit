@@ -173,3 +173,4 @@ cython_debug/
 
 #ADDITIONS
 node_modules/
+pitch.txt
