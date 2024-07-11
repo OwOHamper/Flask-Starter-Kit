@@ -141,6 +141,11 @@ def login_post():
             }})
             
             
+            additional_data = {}
+            if session.get('next'):
+                additional_data['redirect'] = session.get('next')
+            
+            
             userObject = User(user['alternative_id'])
             
             session.clear()
@@ -151,7 +156,10 @@ def login_post():
             
             login_user(userObject, remember=remember)
 
-            return jsonify({'success': True, 'message': 'User logged in successfully!'}), 200
+                
+            logging.info(f"Additional data: {additional_data}")
+
+            return jsonify({'success': True, 'message': 'User logged in successfully!'} | additional_data), 200
         else:
             mongo.db.users.update_one({'email': email}, {'$inc': {
                 'security.failed_login_attempts': 1,
@@ -163,6 +171,6 @@ def login_post():
 
 @auth.route("/logout")
 @limiter.limit("20 per minute", on_breach=lambda limit: rate_limit_exceeded('auth.logout'))
-def logout_post():
+def logout():
     logout_user()
-    return jsonify({'success': True, 'message': 'User logged out successfully!'}), 200
+    return redirect(url_for('pages.home'))

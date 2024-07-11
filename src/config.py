@@ -24,7 +24,8 @@ CSP = {
     ],
     "img-src": [
         "'self'",
-        "data:"
+        "data:",
+        "*"
     ],
 }
 REMEMBER_COOKIE_DURATION = timedelta(days=30)

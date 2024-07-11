@@ -190,7 +190,6 @@ def oauth2_callback(provider):
         flash("Email not verified by OAuth 2.0 provider", "error")
         return redirect(url_for('auth.login'))
     
-    
     user = mongo.db.users.find_one({'email': user_data.get('email')})
     
     if not user:
@@ -203,7 +202,7 @@ def oauth2_callback(provider):
             'alternative_id': alternative_id,
             'auth_provider': provider,
             'profile_picture': user_data.get('picture'),
-            'display_name': user_data.get('name'),
+            'name': user_data.get('name'),
             'bio': user_data.get('bio'),
             
             'connections': {
@@ -220,13 +219,20 @@ def oauth2_callback(provider):
     
         userObject = User(alternative_id)
         
+        redirect_uri = session.get('next')
+        
         session.clear()
         session.permanent = True
         
         login_user(userObject, remember=True)
         
+        if redirect_uri:
+            return redirect(redirect_uri)
+        
         return redirect(url_for('pages.home'))
     else:
+        
+        #Only allow connecting account if it's active and verified
         if user['account_status'] != 'active':
             if user['account_status'] == 'deactivated':
                 flash("Your account has been deactivated. Please contact support for assistance.", "error")
@@ -239,6 +245,7 @@ def oauth2_callback(provider):
             flash("Please verify your email address to activate your account. Check your inbox for a verification email or request a new one.", "error")
             return redirect(url_for('auth.login'))
         
+        
         #User exists and provider is already connected to account
         if provider in user.get('connections', {}):
             
@@ -246,7 +253,7 @@ def oauth2_callback(provider):
             if provider == user.get('auth_provider'):
                 updated_fields = {
                     'profile.profile_picture': user_data.get('picture'),
-                    'profile.display_name': user_data.get('name'),
+                    'profile.name': user_data.get('name'),
                     'profile.bio': user_data.get('bio'),
                 }
             
@@ -272,6 +279,8 @@ def oauth2_callback(provider):
             
             userObject = User(alternative_id)
         
+            redirect_uri = session.get('next')
+        
             session.clear()
             session.permanent = True
             
@@ -280,7 +289,11 @@ def oauth2_callback(provider):
             
             login_user(userObject, remember=True)
             
+            if redirect_uri:
+                return redirect(redirect_uri)
+            
             return redirect(url_for('pages.home'))
+        
         # Need to connect provider to account
         else:
             auth_provider = user.get('auth_provider')
@@ -379,8 +392,6 @@ def link_account():
         auth_method = "password"
     else:
         auth_method = "oauth"
-    
-    print(session['pending_oauth_connection'])
     
     return render_template('pages/auth/link-account.html', locale=get_locale(),
         email=session['pending_oauth_connection']['email'],

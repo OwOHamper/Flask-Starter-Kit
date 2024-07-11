@@ -54,7 +54,7 @@ def build_user(user_data):
         'roles': ['user'],
         'profile': {
             'profile_picture': user_data.get('profile_picture'),
-            'display_name': user_data.get('name'),
+            'name': user_data.get('name'),
             'bio': user_data.get('bio')
         },  
         'preferences': {
@@ -107,10 +107,16 @@ def rate_limit_exceeded(route_name=None):
 
 #USE of alternative id instead of user id, so login can be invalidated without changing the user id
 class User():
-    def __init__(self, alternative_id, is_active_variable=True):
+    def __init__(self, alternative_id, is_active_variable=True, additional_user_data_variable={}):
         self.id = alternative_id
         self.is_active_variable = is_active_variable
         
+        self.additional_user_data_variable = additional_user_data_variable
+        
+        
+    @property
+    def additional_user_data(self):
+        return self.additional_user_data_variable
         
     @property
     def is_active(self):
@@ -133,5 +139,13 @@ def load_user(alternative_id):
     user_data = mongo.db.users.find_one({'alternative_id': alternative_id})
     if user_data:
         is_active = user_data['account_status'] == 'active' and user_data['email_verified']
-        return User(user_data['alternative_id'], is_active_variable=is_active)
+
+        additional_user_data = {
+            'email': user_data['email'],
+            'profile_picture': user_data['profile']['profile_picture'],
+            'name': user_data['profile']['name'],
+            'roles': user_data['roles']
+        }
+        
+        return User(user_data['alternative_id'], is_active_variable=is_active, additional_user_data_variable=additional_user_data)
     return None

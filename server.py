@@ -11,6 +11,8 @@ from src import config
 from src.blueprints.pages import pages
 from src.blueprints.auth.auth import auth
 
+from src.blueprints.admin.admin import admin_bp
+
 
 
 def create_app():
@@ -19,6 +21,10 @@ def create_app():
     app.config['SECRET_KEY'] = config.SECRET_KEY
     app.config['REMEMBER_COOKIE_DURATION'] = config.REMEMBER_COOKIE_DURATION
     app.config['PERMANENT_SESSION_LIFETIME'] = config.PERMANENT_SESSION_LIFETIME
+    
+    #next redirects will be stored in session cookies instead of query strings
+    app.config['USE_SESSION_FOR_NEXT'] = True
+    
     
     app.config['MAIL_SERVER'] = config.MAIL_SERVER
     app.config['MAIL_PORT'] = 587
@@ -38,6 +44,8 @@ def create_app():
 
     app.register_blueprint(pages)
     app.register_blueprint(auth)
+    
+    app.register_blueprint(admin_bp)
 
     @app.errorhandler(401)
     def unauthorized(e):

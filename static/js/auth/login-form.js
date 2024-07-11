@@ -48,9 +48,9 @@ function validateAndSubmit() {
             // Redirect or update UI as needed
             // if redirect field in data is set, redirect to that path
             let redirect = data.redirect || '/';
-            setTimeout(() => {
-                window.location.href = redirect;
-            }, 1000);
+            // setTimeout(() => {
+            window.location.href = redirect;
+            // }, 0);
         } else {
             if (data.redirect) {
                 window.location.href = data.redirect;
