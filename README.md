@@ -24,20 +24,26 @@ This project provides a streamlined setup for seamless development and deploymen
 ## 🌟 Key Features
 
 1. **🚀 Easy Deployment**: Pre-configured Docker setup for straightforward deployment.
-2. **🎨 Modern Design**: Utilizes Tailwind CSS and Flowbite UI library for enhanced design capabilities.
-3. **🔒 Security**: Implements Talisman for security headers and ProxyFix for proper handling of proxies.
-4. **🗜️ Optimization**: Automatic response minification and compression in production mode.
-5. **🛡️ Rate Limiting**: Built-in rate limiting to protect against abuse.
+2. **🔒 Security**: Robust security features including Content Security Policy (CSP) headers, CSRF protection, and more.
+3. **🔐 Authentication System**: OAuth 2.0 support with email verification, password reset, and account linking.
+4. **📦 MongoDB Integration**: Fully integrated MongoDB support for scalable database management.
+5. **🎨 Modern Design**: Utilizes Tailwind CSS and Flowbite UI library for a sleek, responsive design with light/dark mode support.
+6. **🌐 Internationalization**: Babel integration for multi-language support.
+7. **📊 SEO & Analytics**: Ready for search engine optimization and analytics integration.
+8. **📄 Privacy Policy & ToS Templates**: Pre-made templates for legal compliance.
+9. **🔔 Toast Notifications**: Manage notifications with a built-in toast notification system.
+10. **🗜️ Optimization**: Automatic response minification and compression in production mode.
+11. **🛡️ Rate Limiting**: Built-in rate limiting to protect against abuse.
+12. **⚙️ Organized Project Structure**: Well-organized files and directories for easy navigation and maintenance.
 
-## 💡 Additional Features
+## 🚧 Work in Progress / Planned Features
 
-- **🌓 Theme Switcher**: Built-in dark mode support for better user experience.
-- **🌐 Internationalization**: Babel integration for multi-language support.
-- **📊 SEO & Analytics**: Ready for search engine optimization and analytics integration.
+1. **💳 Stripe Integration**: Seamless payment processing with Stripe.
+2. **📊 Admin Panel**: Interface for managing users and monitoring key metrics.
+3. **📚 Documentation**: Comprehensive documentation for project setup, API endpoints, and usage guidelines.
+4. **🎨 Animations & UI Improvements**: Enhancing user experience with smooth animations.
+5. **🛠️ Project Generator** (Potential Feature): A CLI tool to generate new projects with pre-configured settings.
 
-## 🧰 About This Stack
-
-This Flask Starter Kit is built with a specific set of tools and technologies that, while not universally perfect, align well with certain development preferences and workflows. It's designed to be a pragmatic solution for those who find this particular combination of technologies efficient and effective.
 
 ## 🚀 Quick Start
 
@@ -133,22 +139,14 @@ Add new routes in `server.py`, create corresponding templates, and implement add
 
 The following features and improvements are planned for future development:
 
-1. **🔐 Authentication System**: Implement user registration, login, logout, and password reset functionality.
-2. **👤 User Dashboard**: Create a personalized dashboard for registered users.
-3. **👑 Admin Dashboard**: Develop an administrative interface for managing users and content.
-4. **📊 Example Dashboard**: Build a sample dashboard showcasing data visualization and management capabilities.
-5. **📜 Legal Documents**: 
-   - Draft and implement a Terms of Service (ToS) page
-   - Create and integrate a Privacy Policy page
-   - Ensure both documents are easily accessible to users
-6. **🔔 Notification System**: Add a system for in-app notifications and email alerts.
-7. **🧪 Unit Tests**: Develop a comprehensive suite of unit tests for core functionality.
-8. **📈 User Activity Logging**: Add logging for important user actions and system events.
-9. **📚 Documentation**: 
+1. **👑 Admin Dashboard**: Develop an administrative interface for managing users and content.
+2. **📊 Example Dashboard**: Build a sample dashboard showcasing data visualization and management capabilities.
+3. **🧪 Unit Tests**: Develop a comprehensive suite of unit tests for core functionality.
+4. **📈 User Activity Logging**: Add logging for important user actions and system events.
+5. **📚 Documentation**: 
     - Create detailed documentation for the project setup and usage
     - Document API endpoints
     - Implement a robust search functionality across the documentation
-10. **🏁 Finish Default Pages**: Complete and polish all default pages for a cohesive user experience.
 
 We welcome contributions to any of these areas. If you're interested in working on one of these tasks, please open an issue to discuss it before submitting a pull request.
 
