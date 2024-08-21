@@ -24,8 +24,8 @@ This project provides a streamlined setup for seamless development and deploymen
 ## 🌟 Key Features
 
 1. **🚀 Easy Deployment**: Pre-configured Docker setup for straightforward deployment.
-2. **🔒 Security**: Robust security features including Content Security Policy (CSP) headers, CSRF protection, and more.
-3. **🔐 Authentication System**: OAuth 2.0 support with email verification, password reset, and account linking.
+2. **🔐 Authentication System**: OAuth 2.0 support with email verification, password reset, and account linking.
+3. **🔒 Security**: Robust security features including Content Security Policy (CSP) headers, CSRF protection, and more.
 4. **📦 MongoDB Integration**: Fully integrated MongoDB support for scalable database management.
 5. **🎨 Modern Design**: Utilizes Tailwind CSS and Flowbite UI library for a sleek, responsive design with light/dark mode support.
 6. **🌐 Internationalization**: Babel integration for multi-language support.
