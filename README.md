@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://example.com/">
+  <a href="https://flaskstarter.com"">
     <img src="assets/logo.png" alt="Full-Stack Flask Starter Kit Logo" width=200 height=200>
   </a>
   <br>
