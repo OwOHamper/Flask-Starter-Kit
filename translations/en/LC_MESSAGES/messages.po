@@ -25,8 +25,8 @@ msgstr "Under Construction"
 #: templates/components/under_construction.html:5
 msgid "under_construction_description"
 msgstr ""
-"Building a sleek, efficient Flask Starter Kit to supercharge your web "
-"development – launching soon!"
+"Crafting a powerful Flask Starter Kit to revolutionize your web "
+"development – coming soon!"
 
 #: templates/components/forms/auth/forgot-password-form.html:14
 #: templates/components/forms/auth/login-form.html:39
@@ -40,7 +40,7 @@ msgstr ""
 "Full-Stack Flask Starter Kit, web development tool, Flask projects, "
 "Python web framework, Flask features, web application development, Flask "
 "starter template, Flask boilerplate, Python web development, Flask "
-"project structure"
+"project structure, OAuth authentication, MongoDB integration"
 
 #: templates/layouts/landing-base.html:83
 msgid "open_main_menu"
@@ -74,7 +74,7 @@ msgstr "Privacy Policy"
 
 #: templates/layouts/landing-base.html:132
 msgid "terms_and_conditions"
-msgstr "Terms And Conditions"
+msgstr "Terms and Conditions"
 
 #: templates/layouts/landing-base.html:140
 msgid "all_rights_reserved."
@@ -86,7 +86,7 @@ msgstr "401 Unauthorized Access"
 
 #: templates/pages/401.html:19
 msgid "401_unauthorized_message"
-msgstr "Access Denied."
+msgstr "Access Denied"
 
 #: templates/pages/401.html:20
 msgid "401_error_description"
@@ -102,13 +102,13 @@ msgstr "404 Page Not Found"
 
 #: templates/pages/404.html:19
 msgid "something_is_missing"
-msgstr "Something's missing."
+msgstr "Oops! Something's missing."
 
 #: templates/pages/404.html:20
 msgid "404_error_description"
 msgstr ""
-"Sorry, we can't find that page. You'll find lots to explore on the home "
-"page."
+"We're sorry, but we can't find the page you're looking for. Let's get you "
+"back on track with our homepage."
 
 #: templates/pages/404.html:21
 msgid "back_to_homepage"
@@ -117,27 +117,28 @@ msgstr "Back to Homepage"
 #: templates/pages/about.html:4 templates/pages/about.html:19
 #: templates/pages/about.html:23
 msgid "about_title"
-msgstr "About"
+msgstr "About Full-Stack Flask Starter Kit"
 
 #: templates/pages/about.html:6 templates/pages/about.html:20
 #: templates/pages/about.html:24
 msgid "about_description"
 msgstr ""
-"Learn about the Full-Stack Flask Starter Kit, its features, and the team "
-"behind this powerful web development tool designed to streamline your "
-"Flask projects."
+"Discover the Full-Stack Flask Starter Kit, a comprehensive solution designed "
+"to streamline your Flask projects. Learn about our powerful features, "
+"including OAuth authentication, MongoDB integration, and modern UI design."
 
 #: templates/pages/contact.html:4 templates/pages/contact.html:19
 #: templates/pages/contact.html:23
 msgid "contact_title"
-msgstr "Contact"
+msgstr "Contact Us"
 
 #: templates/pages/contact.html:6 templates/pages/contact.html:20
 #: templates/pages/contact.html:24
 msgid "contact_description"
 msgstr ""
-"Get in touch with the Flask Starter Kit team. We're here to help with "
-"your questions, feedback, or support needs."
+"Have questions or feedback? Get in touch with the Flask Starter Kit team. "
+"We're here to support your development journey and help you make the most "
+"of our toolkit."
 
 #: templates/pages/documentation.html:4 templates/pages/documentation.html:19
 #: templates/pages/documentation.html:23
@@ -148,36 +149,36 @@ msgstr "Documentation"
 #: templates/pages/documentation.html:24
 msgid "documentation_description"
 msgstr ""
-"Comprehensive guides for the Full-Stack Flask Starter Kit. From setup to "
-"advanced features, find all the information you need to maximize your "
-"Flask development."
+"Comprehensive guides for the Full-Stack Flask Starter Kit. From initial setup "
+"to advanced features like OAuth integration and MongoDB usage, find all the "
+"information you need to maximize your Flask development."
 
 #: templates/pages/explore.html:4 templates/pages/explore.html:19
 #: templates/pages/explore.html:23
 msgid "explore_title"
-msgstr "Explore"
+msgstr "Explore Our Features"
 
 #: templates/pages/explore.html:6 templates/pages/explore.html:20
 #: templates/pages/explore.html:24
 msgid "explore_description"
 msgstr ""
-"Discover the Full-Stack Flask Starter Kit's extensive features and "
-"capabilities. Explore our powerful web development tools, comprehensive "
-"guides, and innovative solutions designed to accelerate your Flask "
-"projects. From beginner tutorials to advanced techniques, find everything"
-" you need to elevate your web application development."
+"Discover the Full-Stack Flask Starter Kit's extensive capabilities. From "
+"OAuth authentication to MongoDB integration, explore our powerful web "
+"development tools designed to accelerate your Flask projects. Whether you're "
+"building a small application or a complex web service, we've got you covered."
 
 #: templates/pages/home.html:4 templates/pages/home.html:21
 #: templates/pages/home.html:25
 msgid "home_title"
-msgstr "Flask Starter Kit"
+msgstr "Full-Stack Flask Starter Kit"
 
 #: templates/pages/home.html:6 templates/pages/home.html:22
 #: templates/pages/home.html:26
 msgid "home_description"
 msgstr ""
-"Quickly launch your web applications with the Full-Stack Flask Starter "
-"Kit."
+"Jumpstart your web applications with the Full-Stack Flask Starter Kit. "
+"Featuring OAuth authentication, MongoDB integration, and modern UI design "
+"for seamless development and deployment."
 
 #: templates/pages/home.html:36
 msgid "home_hero_heading"
@@ -186,12 +187,13 @@ msgstr "Full-Stack Flask Starter Kit"
 #: templates/pages/home.html:37
 msgid "home_hero_description"
 msgstr ""
-"Quickly launch your web applications with the Full-Stack Flask Starter "
-"Kit. Streamlined setup for seamless development and deployment."
+"Accelerate your web development with our comprehensive Flask Starter Kit. "
+"Enjoy seamless OAuth authentication, MongoDB integration, and a modern UI "
+"design powered by Tailwind CSS and Flowbite."
 
 #: templates/pages/home.html:41
 msgid "see_features"
-msgstr "See Features"
+msgstr "Explore Features"
 
 #: templates/pages/home.html:55
 msgid "view_on_github"
@@ -203,7 +205,7 @@ msgstr "🌟 Key Features"
 
 #: templates/pages/home.html:67
 msgid "feature_section_subtitle"
-msgstr "Empowering your web development with a thoughtfully crafted toolkit."
+msgstr "Empowering your web development with a comprehensive, modern toolkit."
 
 #: templates/pages/home.html:77
 msgid "feature_1_title"
@@ -213,47 +215,47 @@ msgstr "Easy Deployment"
 msgid "feature_1_description"
 msgstr ""
 "Pre-configured Docker setup for straightforward deployment, getting your "
-"application up and running quickly."
+"application up and running quickly in any environment."
 
 #: templates/pages/home.html:88
 msgid "feature_2_title"
-msgstr "Modern Design"
+msgstr "Advanced Authentication"
 
 #: templates/pages/home.html:89
 msgid "feature_2_description"
 msgstr ""
-"Leveraging Tailwind CSS and Flowbite UI library for a sleek, responsive "
-"interface that's easy to customize."
+"Robust OAuth 2.0 support with email verification, password reset, and "
+"account linking for secure and flexible user management."
 
 #: templates/pages/home.html:98
 msgid "feature_3_title"
-msgstr "Security & Optimization"
+msgstr "MongoDB Integration"
 
 #: templates/pages/home.html:99
 msgid "feature_3_description"
 msgstr ""
-"Built-in security measures and performance optimizations to keep your "
-"application safe and fast."
+"Seamless integration with MongoDB for scalable and flexible data management, "
+"perfect for modern web applications."
 
 #: templates/pages/home.html:107
 msgid "feature_4_title"
-msgstr "Internalization"
+msgstr "Modern UI Design"
 
 #: templates/pages/home.html:108
 msgid "feature_4_description"
 msgstr ""
-"Babel integration for seamless multi-language support, making your app "
-"accessible to a global audience."
+"Leveraging Tailwind CSS and Flowbite UI library for a sleek, responsive "
+"interface with built-in light/dark mode support."
 
 #: templates/pages/home.html:117
 msgid "feature_5_title"
-msgstr "Convenience"
+msgstr "Internationalization"
 
 #: templates/pages/home.html:118
 msgid "feature_5_description"
 msgstr ""
-"While not claiming perfection, this tech stack is crafted to enhance "
-"developer productivity and satisfaction."
+"Babel integration for seamless multi-language support, making your app "
+"accessible to a global audience with ease."
 
 #: templates/pages/home.html:124
 msgid "feature_6_title"
@@ -262,12 +264,12 @@ msgstr "Comprehensive Toolset"
 #: templates/pages/home.html:125
 msgid "feature_6_description"
 msgstr ""
-"From theme switching to rate limiting, SEO support to analytics "
-"integration - a robust set of features to jumpstart your project."
+"From SEO support to analytics integration, rate limiting to response "
+"optimization - a robust set of features to supercharge your project."
 
 #: templates/pages/home.html:137
 msgid "FAQ"
-msgstr "Frequently asked questions"
+msgstr "Frequently Asked Questions"
 
 #: templates/pages/home.html:143
 msgid "question_1"
@@ -276,9 +278,9 @@ msgstr "What is the Full-Stack Flask Starter Kit?"
 #: templates/pages/home.html:145
 msgid "answer_1"
 msgstr ""
-"A comprehensive starting point for Flask-based web applications, "
-"featuring modern design tools, deployment configurations, and developer-"
-"friendly features."
+"A comprehensive starting point for Flask-based web applications, featuring "
+"OAuth authentication, MongoDB integration, modern design tools, and "
+"developer-friendly features for rapid development and deployment."
 
 #: templates/pages/home.html:150
 msgid "question_2"
@@ -288,7 +290,8 @@ msgstr "Who is this starter kit for?"
 msgid "answer_2"
 msgstr ""
 "Developers looking for a robust Flask foundation with integrated modern "
-"frontend tools and deployment solutions."
+"frontend tools, OAuth authentication, MongoDB support, and efficient "
+"deployment solutions."
 
 #: templates/pages/home.html:157
 msgid "question_3"
@@ -296,7 +299,9 @@ msgstr "What technologies does this kit use?"
 
 #: templates/pages/home.html:159
 msgid "answer_3"
-msgstr "Flask, Tailwind CSS, Flowbite, Docker, MongoDB, Babel, and more."
+msgstr ""
+"Flask, OAuth 2.0, MongoDB, Tailwind CSS, Flowbite, Docker, Babel, and more "
+"for a comprehensive full-stack development experience."
 
 #: templates/pages/home.html:164
 msgid "question_4"
@@ -305,18 +310,18 @@ msgstr "Is this kit suitable for beginners?"
 #: templates/pages/home.html:166
 msgid "answer_4"
 msgstr ""
-"While some Flask experience is beneficial, our documentation aims to "
-"guide developers of various skill levels."
+"While some Flask experience is beneficial, our extensive documentation aims "
+"to guide developers of various skill levels through setup and usage."
 
 #: templates/pages/home.html:173
 msgid "question_5"
-msgstr "How does the Docker setup work?"
+msgstr "How does the OAuth authentication work?"
 
 #: templates/pages/home.html:175
 msgid "answer_5"
 msgstr ""
-"Our kit includes a pre-configured Docker setup for easy development and "
-"deployment across different environments."
+"Our kit includes a pre-configured OAuth 2.0 setup, supporting various "
+"providers for easy and secure user authentication and authorization."
 
 #: templates/pages/home.html:180
 msgid "question_6"
@@ -326,7 +331,7 @@ msgstr "Can I use this for commercial projects?"
 msgid "answer_6"
 msgstr ""
 "Yes, this starter kit is open-source and can be used for both personal "
-"and commercial projects. Please check the license for details."
+"and commercial projects. Please check the license for specific details."
 
 #: templates/pages/home.html:187
 msgid "question_7"
@@ -336,17 +341,17 @@ msgstr "How can I contribute to this project?"
 msgid "answer_7"
 msgstr ""
 "We welcome contributions! Check our GitHub repository for contribution "
-"guidelines and open issues."
+"guidelines, open issues, and ways to get involved in improving the kit."
 
 #: templates/pages/home.html:194
 msgid "question_8"
-msgstr "Is there a community or forum for support?"
+msgstr "Is there support for database migrations with MongoDB?"
 
 #: templates/pages/home.html:196
 msgid "answer_8"
 msgstr ""
-"While we don't have a dedicated forum, you can use GitHub issues for "
-"questions and discussions."
+"Yes, the kit includes tools and guidelines for managing MongoDB schema "
+"changes and data migrations to ensure smooth database evolution."
 
 #: templates/pages/privacy-policy.html:3 templates/pages/privacy-policy.html:18
 #: templates/pages/privacy-policy.html:22
@@ -359,7 +364,7 @@ msgid "privacy_policy_description"
 msgstr ""
 "Full-Stack Flask Starter Kit's Privacy Policy outlines how we collect, "
 "use, and protect your data. Learn about our commitment to your privacy "
-"and data security."
+"and data security, including our handling of authentication information."
 
 #: templates/pages/privacy-policy.html:34
 #: templates/pages/terms-and-conditions.html:31
@@ -378,6 +383,5 @@ msgstr "Terms & Conditions"
 msgid "terms_and_conditions_description"
 msgstr ""
 "Read the Full-Stack Flask Starter Kit's Terms and Conditions. Understand "
-"your rights and responsibilities when using our Flask development "
-"toolkit."
-
+"your rights and responsibilities when using our Flask development toolkit, "
+"including guidelines for authentication and data usage."

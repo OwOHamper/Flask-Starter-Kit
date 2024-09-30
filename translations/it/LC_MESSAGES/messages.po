@@ -90,7 +90,9 @@ msgstr "Accesso negato."
 
 #: templates/pages/401.html:20
 msgid "401_error_description"
-msgstr "Spiacenti, non hai il permesso di accedere a questa pagina. Per favore, accedi o contatta l'amministratore se ritieni che questo sia un errore."
+msgstr ""
+"Spiacenti, non hai il permesso di accedere a questa pagina. Per favore, "
+"accedi o contatta l'amministratore se ritieni che questo sia un errore."
 
 #: templates/pages/401.html:21
 msgid "go_to_login"

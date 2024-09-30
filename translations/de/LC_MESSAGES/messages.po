@@ -90,7 +90,10 @@ msgstr "Zugriff verweigert."
 
 #: templates/pages/401.html:20
 msgid "401_error_description"
-msgstr "Entschuldigung, Sie haben keine Berechtigung, auf diese Seite zuzugreifen. Bitte melden Sie sich an oder kontaktieren Sie den Administrator, wenn Sie glauben, dass dies ein Fehler ist."
+msgstr ""
+"Entschuldigung, Sie haben keine Berechtigung, auf diese Seite "
+"zuzugreifen. Bitte melden Sie sich an oder kontaktieren Sie den "
+"Administrator, wenn Sie glauben, dass dies ein Fehler ist."
 
 #: templates/pages/401.html:21
 msgid "go_to_login"

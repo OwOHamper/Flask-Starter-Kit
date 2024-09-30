@@ -25,6 +25,7 @@
 <meta name="twitter:title" content="{{ _('home_title') }}">
 <meta name="twitter:description" content="{{ _('home_description') }}">
 
+
 {% endblock %}
 
 {% block content %}
@@ -129,7 +130,29 @@
   </section>
 
 
-
+  <section class="bg-white dark:bg-gray-900">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+        <div class="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
+            <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+                <h2 class="text-center lg:text-left mb-4 text-3xl md:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Authentication Showcase</h2>
+                <p class="text-center lg:text-left mb-4">Our Full-Stack Flask Starter Kit implements robust OAuth 2.0 authentication, providing a secure and standardized way to manage user access. This demo showcases the seamless integration of multiple OAuth providers, allowing users to authenticate using their preferred accounts.</p>
+                
+                <h3 class="text-center lg:text-left mb-2 text-lg font-semibold text-gray-900 dark:text-white">Key features:</h3>
+                <ul class="text-center lg:text-left space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400 mb-6">
+                    <li>Support for multiple OAuth providers</li>
+                    <li>Secure token handling and session management</li>
+                    <li>Easy integration with Flask's user session</li>
+                    <li>Easily customizable for your own needs</li>
+                </ul>
+            </div>
+            <div class="w-full flex justify-center items-center">
+                <div class="max-w-[30rem] w-full">
+                    {% include 'components/forms/auth/registration-form.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- FAQ -->
 <section class="bg-white dark:bg-gray-900">

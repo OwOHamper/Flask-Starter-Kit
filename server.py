@@ -47,6 +47,10 @@ def create_app():
     
     app.register_blueprint(admin_bp)
 
+    @app.errorhandler(400)
+    def bad_request(e):
+        return render_template('pages/400.html')
+
     @app.errorhandler(401)
     def unauthorized(e):
         return render_template('pages/401.html')
