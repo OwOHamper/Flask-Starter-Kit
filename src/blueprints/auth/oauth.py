@@ -75,7 +75,7 @@ def get_oauth2_user_data(provider, oauth2_token):
 def oauth2_authorize(provider):
     link = request.args.get('link')
     if current_user.is_authenticated:
-        return redirect('/you-are-authenticated-log-out-first')
+        return redirect('/admin')
     
     provider_data = config.OAUTH2_PROVIDERS.get(provider)
     if not provider_data:
@@ -107,7 +107,7 @@ def oauth2_authorize(provider):
 
 def callback_initialization(provider):
     if current_user.is_authenticated:
-        return False, redirect('/you-are-authenticated-log-out-first')
+        return False, redirect('/admin')
         
     provider_data = config.OAUTH2_PROVIDERS.get(provider)
     if not provider_data:

@@ -27,7 +27,7 @@ auth.register_blueprint(oauth_bp)
 @auth.route('/login')
 def login():
     if current_user.is_authenticated:
-        return redirect('/you-are-authenticated-log-out-first')
+        return redirect('/admin')
 
     return render_template('pages/auth/login.html', locale=get_locale())
 
@@ -35,7 +35,7 @@ def login():
 @auth.route('/signup')
 def register():
     if current_user.is_authenticated:
-        return redirect('/you-are-authenticated-log-out-first')
+        return redirect('/admin')
     return render_template('pages/auth/registration.html', locale=get_locale())
 
 
