@@ -5,15 +5,7 @@ services:
     build: .
     ports:
       - "5000:5000"
-    environment:
-      - PRODUCTION=true
-      - PORT=5000
-      - MONGO_URI=mongodb://mongo:27017/flask-starter-kit
-      - SECRET_KEY=SECRET_KEY_1
-      - SERIALIZER_SECRET_KEY=SECRET_KEY_2
-      - MAIL_SERVER=your_mail_server
-      - MAIL_USERNAME=your_username
-      - MAIL_PASSWORD=your_password
+    env_file: ".env"
     depends_on:
       - mongo
     restart: unless-stopped
