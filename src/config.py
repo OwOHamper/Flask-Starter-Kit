@@ -67,6 +67,9 @@ OAUTH2_PROVIDERS = {
     },
 }
 
+#CELERY CONSTANTS, MQ RABBIT EXAMPLE
+# CELERY_BROKER_URL = "amqp://admin:passowrd@rabbit:5672/"
+# CELERY_RESULT_BACKEND = "rpc://admin:password@rabbit:5672/"
 
 #CONSTANTS FROM ENVIRONMENTAL VARIABLES
 PRODUCTION = os.getenv('PRODUCTION')
@@ -87,6 +90,9 @@ if None in (PRODUCTION, PORT, MONGO_URI, SECRET_KEY, SERIALIZER_SECRET_KEY):
 
 if None in (MAIL_SERVER, MAIL_USERNAME, MAIL_PASSWORD):
     raise ValueError('One or more email environmental variables are missing!')
+
+# if None in (CELERY_BROKER_URL, CELERY_RESULT_BACKEND):
+    # raise ValueError('One or more Celery environmental variables are missing!')
 
 if HOST is None:
     HOST = '0.0.0.0'

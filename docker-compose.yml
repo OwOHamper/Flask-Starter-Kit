@@ -11,6 +11,17 @@ services:
       - mongo
     restart: unless-stopped
 
+  # celery_worker:
+  #   build:
+  #     context: .
+  #     dockerfile: celery.Dockerfile
+  #   env_file:
+  #     - .env
+  #   depends_on:
+  #     - mongo
+  #     - rabbit
+  #   restart: unless-stopped
+
   mongo:
     image: mongo:latest
     volumes:
@@ -28,6 +39,20 @@ services:
     depends_on:
       - mongo
     restart: unless-stopped
+
+  # rabbit:
+  #   hostname: rabbit
+  #   image: "rabbitmq:management"
+  #   ports:
+  #     - "15672:15672"
+  #   environment:
+  #     RABBITMQ_DEFAULT_USER: "admin"
+  #     RABBITMQ_DEFAULT_PASS: "password"
+  #   volumes:
+  #     - rabbit_data:/var/lib/rabbitmq
+  #   restart: unless-stopped
+
+  # flower: TODO ADD
 
 volumes:
   mongo_data:

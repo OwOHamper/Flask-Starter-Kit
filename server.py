@@ -3,6 +3,7 @@ import logging
 from flask import Flask, render_template, g
 from flask_login import current_user
 
+from celery import Celery, Task
 
 from src.extensions import init_extensions, mongo
 from src.utils import ProxyFix
@@ -13,6 +14,24 @@ from src.blueprints.auth.auth import auth
 
 from src.blueprints.admin.admin import admin_bp
 
+
+def make_celery(app: Flask) -> Celery:
+    class FlaskTask(Task):
+        def __call__(self, *args: object, **kwargs: object) -> object:
+            with app.app_context():
+                return self.run(*args, **kwargs)
+            
+    celery_app = Celery(
+        app.name,
+        backend=config.CELERY_RESULT_BACKEND,
+        broker=config.CELERY_BROKER_URL
+    )
+    
+    celery_app.Task = FlaskTask
+    celery_app.set_default()
+    app.extensions['celery'] = celery_app
+    
+    return celery_app
 
 
 def create_app():
@@ -39,7 +58,7 @@ def create_app():
 
     init_extensions(app)
 
-
+    # make_celery(app)
     
 
     app.register_blueprint(pages)
