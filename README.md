@@ -35,6 +35,7 @@ This project provides a streamlined setup for seamless development and deploymen
 10. **🗜️ Optimization**: Automatic response minification and compression in production mode.
 11. **🛡️ Rate Limiting**: Built-in rate limiting to protect against abuse.
 12. **⚙️ Organized Project Structure**: Well-organized files and directories for easy navigation and maintenance.
+13. **🐰 Celery & RabbitMQ Integration**: Ready integration of Celery with RabbitMQ for efficient task queuing and background processing.
 
 ## 🚧 Work in Progress / Planned Features
 
