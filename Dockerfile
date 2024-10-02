@@ -14,7 +14,9 @@ RUN npx tailwindcss -i ./static/src/input.css -o ./static/dist/css/output.css --
 
 
 
-FROM python:3.9-slim
+FROM python:3.10.8-slim
+
+ENV PYTHONUNBUFFERED 1
 
 WORKDIR /app
 
